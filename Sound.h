@@ -5,16 +5,16 @@
  Created Date: 10/29/2017
  Last Updated Date: 10/29/2017
  Description: API initializing sound port and playing sound. Uses PB0 for
-		output to speaker, SysTick timer determine when to output to PB0, and
-		Timer2 to cycle through an array of notes to play. These notes determine
-		the frequency SysTick timer sends output to PB0.
+    output to speaker, SysTick timer determine when to output to PB0, and
+    Timer2 to cycle through an array of notes to play. These notes determine
+    the frequency SysTick timer sends output to PB0.
  Hardware: 
     TM4C123G LaunchPad 
     PN2222
     1N914
     Speaker
  Hardware Configuration:
-		See diagram.
+    See diagram.
  */
 #include <stdint.h>
 #include "inc/tm4c123gh6pm.h"
@@ -25,8 +25,8 @@
 
 /**************Sound_Init***************
  Description: Initializes sound module, including PE5 for output to speaker,
-		SysTick for sending output to PE5 at specified frequencies, and Timer2 
-		for cycling through notes to play (defines frequency SysTick interrupts at).
+    SysTick for sending output to PE5 at specified frequencies, and Timer2 
+    for cycling through notes to play (defines frequency SysTick interrupts at).
  Inputs: none
  Outputs: none
 */

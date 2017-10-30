@@ -9,7 +9,7 @@
     TM4C123G LaunchPad 
     3 Switches
  Hardware Configuration:
-		See diagram.
+    See diagram.
  */
 
 #include <stdint.h>
@@ -29,15 +29,15 @@ void Switch_Init(){
   SYSCTL_RCGCGPIO_R |= 0x02;//port B
   while((SYSCTL_PRGPIO_R&0x2) == 0){};
   GPIO_PORTB_DIR_R  &= ~0x7; // PB0-2 is out 
-	GPIO_PORTB_AFSEL_R &= ~0x7; // PB0-2 disable other function
-	GPIO_PORTB_DEN_R |= 0x7; // PB0-2 is enabled as digital i/o
+  GPIO_PORTB_AFSEL_R &= ~0x7; // PB0-2 disable other function
+  GPIO_PORTB_DEN_R |= 0x7; // PB0-2 is enabled as digital i/o
   GPIO_PORTB_PCTL_R &= ~0x0FFF; // PB0-2 GPIO
   GPIO_PORTB_AMSEL_R = 0; // PB0-2 not analog
   GPIO_PORTB_IS_R &= ~0x7; // PB0-2 edge-sensitive
   GPIO_PORTB_IBE_R |= 0x7; // PB0-2 both edges
   GPIOPortBArm();
   
-	// Init Timer0 for debounding.
+  // Init Timer0 for debounding.
   SYSCTL_RCGCTIMER_R |= 0x01;   // Activate TIMER0
   while((SYSCTL_RCGCTIMER_R & 0x00000001) == 0){};
   Last = GPIO_PORTB_DATA_R; // Initial switch state
@@ -57,7 +57,7 @@ static void GPIOPortBArm(){
 
  /**************Timer0Arm***************
  Description: Arms Timer0 interrupt to debounce switches. Interrupts after 
-		10ms.
+    10ms.
  Inputs: none
  Outputs: none
 */
@@ -78,7 +78,7 @@ static void Timer0Arm(){
 
  /**************GPIOPortB_Handler***************
  Description: Interrupts on rising or falling edge of Port B. Disarms Port B
-		interrupt and enables Timer0 interrupt.
+    interrupt and enables Timer0 interrupt.
  Inputs: none
  Outputs: none
 */
@@ -86,8 +86,8 @@ void GPIOPortB_Handler(){
   GPIO_PORTB_ICR_R = 0x1F; // Acknowledge.
   GPIO_PORTB_IM_R &= ~0x1F; // Disarm interrupt on PB4-0 
   if (Last == 0) {    // 0 means it was previously released, so this is a press
-		ButtonPressed();  // execute user task
-	}
+    ButtonPressed();  // execute user task
+  }
   Timer0Arm(); // Start timer, once interrupts will re-arm Port B.
 }
 
@@ -105,47 +105,47 @@ void Timer0A_Handler(){
 
  /**************ButtonPressed***************
  Description: Determines which button was pressed and updates ClockMain.c 
-		global variables.
+    global variables.
  Inputs: none
  Outputs: none
 */
 void ButtonPressed(){
   uint32_t data = GPIO_PORTB_DATA_R;
   switch (data){
-		// PB0 pressed, change edit mode
+    // PB0 pressed, change edit mode
     case 0x01:
-			ECSMain_EditMode++;
-			ECSMain_EditMode = (int)ECSMain_EditMode < 3 
-				? ECSMain_EditMode 
-				: EM_NONE; 
+      ECSMain_EditMode++;
+      ECSMain_EditMode = (int)ECSMain_EditMode < 3 
+        ? ECSMain_EditMode 
+        : EM_NONE; 
       break;
     default:
       break;
 
-		// PB1 pressed, decrement limit
+    // PB1 pressed, decrement limit
     case 0x02:
-			if (ECSMain_EditMode == EM_SOFT_LIMIT) {
-				ECSMain_SoftLimit = ECSMain_SoftLimit == 0 
-					? 0
-					: ECSMain_SoftLimit - 1;
-			} else if (ECSMain_EditMode == EM_HARD_LIMIT) {
-				ECSMain_HardLimit = ECSMain_HardLimit == ECSMain_SoftLimit
-					? ECSMain_SoftLimit
-					: ECSMain_HardLimit - 1;
-			}
+      if (ECSMain_EditMode == EM_SOFT_LIMIT) {
+        ECSMain_SoftLimit = ECSMain_SoftLimit == 0 
+          ? 0
+          : ECSMain_SoftLimit - 1;
+      } else if (ECSMain_EditMode == EM_HARD_LIMIT) {
+        ECSMain_HardLimit = ECSMain_HardLimit == ECSMain_SoftLimit
+          ? ECSMain_SoftLimit
+          : ECSMain_HardLimit - 1;
+      }
       break;
 
-		// PB2 pressed, increment limit
+    // PB2 pressed, increment limit
     case 0x04:
-			if (ECSMain_EditMode == EM_SOFT_LIMIT) {
-				ECSMain_SoftLimit = ECSMain_SoftLimit == ECSMain_HardLimit 
-					? ECSMain_HardLimit
-					: ECSMain_SoftLimit + 1;
-			} else if (ECSMain_EditMode == EM_HARD_LIMIT) {
-				ECSMain_HardLimit = ECSMain_HardLimit == 999
-					? 999
-					: ECSMain_HardLimit + 1;
-			}
+      if (ECSMain_EditMode == EM_SOFT_LIMIT) {
+        ECSMain_SoftLimit = ECSMain_SoftLimit == ECSMain_HardLimit 
+          ? ECSMain_HardLimit
+          : ECSMain_SoftLimit + 1;
+      } else if (ECSMain_EditMode == EM_HARD_LIMIT) {
+        ECSMain_HardLimit = ECSMain_HardLimit == 999
+          ? 999
+          : ECSMain_HardLimit + 1;
+      }
       break;
   } 
 }

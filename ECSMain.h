@@ -2,9 +2,9 @@
 
 // Struct type to contain attributes of the 3 ECS states.
 typedef struct ECSState_t {
-	enum led {LED_GREEN, LED_YELLOW, LED_RED} led;
-	enum sound {SOUND_OFF, SOUND_ON} sound;
-	enum electrolysis {ELEC_OFF, ELEC_ON} electrolysis;
+  enum led {LED_GREEN, LED_YELLOW, LED_RED} led;
+  enum sound {SOUND_OFF, SOUND_ON} sound;
+  enum electrolysis {ELEC_OFF, ELEC_ON} electrolysis;
 } ECSState_t;
 
 // EM_NONE: Not currently editing anything
@@ -41,11 +41,11 @@ void EnableInterrupts(void);
 
 // TEST TYPES AND FUNCTIONS
 typedef struct TestVars_t {
-	int softLimit;
-	int hardLimit;
-	EditMode_t editMode;
-	int co2Val;
-	const ECSState_t * expectedState;
+  int softLimit;
+  int hardLimit;
+  EditMode_t editMode;
+  int co2Val;
+  const ECSState_t * expectedState;
 } TestVars_t;
 
 void mainTest(void);

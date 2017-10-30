@@ -9,15 +9,15 @@
 
 // init port, adc, timer to sample
 void CO2Sensor_Init() {
-	initPE5();
-	initADC0();
-	initTimer1A();
+  initPE5();
+  initADC0();
+  initTimer1A();
 }
 
 // 0 - 1000
 int CO2Sensor_ADCToPercCO2(int adcVal) {
-	// TODO: Calibrate
-	return 0;
+  // TODO: Calibrate
+  return 0;
 }
 
 // PRIVATE FUNCTIONS
@@ -43,12 +43,12 @@ void initADC0() {
   ADC0_SSCTL3_R = 0x0006; // No TS0 D0, yes IE0 END0
   ADC0_IM_R &= ~0x0008; // Disable SS3 interrupts
   ADC0_ACTSS_R |= 0x0008; // Enable sample sequencer 3
-	ADC0_SAC_R = ADC_AVGING;
+  ADC0_SAC_R = ADC_AVGING;
 }
 
 void initTimer1A() {
   SYSCTL_RCGCTIMER_R |= 0x02; // Activate TIMER1 (bit 1)
-	while((SYSCTL_RCGCTIMER_R & 0x00000002) == 0){}; // Wait until Timer1 is clocked
+  while((SYSCTL_RCGCTIMER_R & 0x00000002) == 0){}; // Wait until Timer1 is clocked
   TIMER1_CTL_R = 0; // Disable TIMER1A during setup
   TIMER1_CFG_R = 0; // Configure for 32-bit mode
   TIMER1_TAMR_R = 0x2; // Configure for periodic mode, default down-count settings
@@ -58,37 +58,37 @@ void initTimer1A() {
   TIMER1_IMR_R = 0x1; // Arm timeout interrupt
   NVIC_PRI5_R = (NVIC_PRI5_R&0xFFFF00FF)|0x00006000; // Priority 3
   NVIC_EN0_R |= 1<<21; // Enable IRQ 21 in NVIC
-	TIMER1_CTL_R = 0x00000001;
+  TIMER1_CTL_R = 0x00000001;
 }
 
 void Timer1A_Handler() {
-	TIMER1_ICR_R = TIMER_ICR_TATOCINT; // Acknowledge
-	ECSMain_CO2ADCVal = getADCVal();
+  TIMER1_ICR_R = TIMER_ICR_TATOCINT; // Acknowledge
+  ECSMain_CO2ADCVal = getADCVal();
 }
 
 int getADCVal() {
-	int adcVal;
-	ADC0_PSSI_R = 0x0008; // Initiate SS3
+  int adcVal;
+  ADC0_PSSI_R = 0x0008; // Initiate SS3
   while((ADC0_RIS_R&0x08)==0){}; // Wait for conversion done
   adcVal = ADC0_SSFIFO3_R&0xFFF; // Read result
   ADC0_ISC_R = 0x0008; // Acknowledge completion
 
-	return adcVal;
+  return adcVal;
 }
 
 // TEST FUNCTIONS
 
 void CO2Sensor_Test() {
-	initPE5();
-	initADC0();
-	
-	int testADCVal;
-	while (1) {
-		testADCVal = getADCVal();
-		testWait();
-	}
+  initPE5();
+  initADC0();
+  
+  int testADCVal;
+  while (1) {
+    testADCVal = getADCVal();
+    testWait();
+  }
 }
 
 static void testWait() {
-	for(int j = 0; j < 80000000; j++) {};
+  for(int j = 0; j < 80000000; j++) {};
 }

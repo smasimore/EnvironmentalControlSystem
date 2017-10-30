@@ -5,10 +5,10 @@
  Created Date: 09/16/2017
  Last Updated Date: 09/27/2017
  Description: API for initializing and handling interrupt for 5 switches used
-		by alarm clock. Handler checks which switch was hit and modifies relevant
-		global vars created in ClockMain.c. Handles debouncing by starting Timer0B
-		on switch edge interrupt and recording the state of the switch after a 
-		certain time period. Modified from original by Jonathan Valvano.
+    by alarm clock. Handler checks which switch was hit and modifies relevant
+    global vars created in ClockMain.c. Handles debouncing by starting Timer0B
+    on switch edge interrupt and recording the state of the switch after a 
+    certain time period. Modified from original by Jonathan Valvano.
  Hardware: 
     TM4C123G LaunchPad 
     Sitronix ST7735R 18-bit color 1.8" TFT LCD
@@ -17,7 +17,7 @@
     1N914
     Speaker
  Hardware Configuration:
-		See diagram.
+    See diagram.
  */
 #include <stdint.h>
 
