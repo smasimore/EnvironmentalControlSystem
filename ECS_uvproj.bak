@@ -436,19 +436,9 @@
               <FilePath>.\ECSMain.c</FilePath>
             </File>
             <File>
-              <FileName>ECSMain.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\ECSMain.h</FilePath>
-            </File>
-            <File>
               <FileName>LED.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\LED.c</FilePath>
-            </File>
-            <File>
-              <FileName>LED.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\LED.h</FilePath>
             </File>
             <File>
               <FileName>Electrolysis.c</FileName>
@@ -466,19 +456,9 @@
               <FilePath>.\CO2Sensor.c</FilePath>
             </File>
             <File>
-              <FileName>CO2Sensor.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\CO2Sensor.h</FilePath>
-            </File>
-            <File>
               <FileName>ADCSWTrigger.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\ADCSWTrigger.c</FilePath>
-            </File>
-            <File>
-              <FileName>ADCSWTrigger.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\ADCSWTrigger.h</FilePath>
             </File>
             <File>
               <FileName>LCD.c</FileName>

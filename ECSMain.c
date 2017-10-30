@@ -12,9 +12,13 @@
 // Test mode
 // TM_OFF: None, regular run mode
 // TM_STATES: Cycles system through states
+// TM_LEDS: Calls LED_Test
+// TM_SOUND: Calls Sound_Test
+// TM_ELEC: Calls Electrolysis_Test
+// TM_CO2SENSOR: Calls CO2Sensor_Test
+// TM_LCD: Calls LCD_Test
 enum TestMode {TM_OFF, TM_STATES, TM_LEDS, TM_SOUND, 
-                TM_ELEC, TM_CO2SENSOR, TM_LCD} TestMode = TM_STATES;
-
+               TM_ELEC, TM_CO2SENSOR, TM_LCD} TestMode = TM_STATES;
 
 // PUBLIC GLOBAL VARS
             

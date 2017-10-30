@@ -416,11 +416,6 @@
               <FilePath>.\PLL.c</FilePath>
             </File>
             <File>
-              <FileName>ST7735.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\ST7735_4C123\ST7735.c</FilePath>
-            </File>
-            <File>
               <FileName>Sound.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Sound.c</FilePath>
@@ -446,24 +441,19 @@
               <FilePath>.\Electrolysis.c</FilePath>
             </File>
             <File>
-              <FileName>Electrolysis.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Electrolysis.h</FilePath>
-            </File>
-            <File>
               <FileName>CO2Sensor.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\CO2Sensor.c</FilePath>
             </File>
             <File>
-              <FileName>ADCSWTrigger.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\ADCSWTrigger.c</FilePath>
-            </File>
-            <File>
               <FileName>LCD.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\LCD.c</FilePath>
+            </File>
+            <File>
+              <FileName>ST7735.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\ST7735.c</FilePath>
             </File>
           </Files>
         </Group>
