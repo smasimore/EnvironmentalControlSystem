@@ -1,49 +1,65 @@
+/********** LCD.c ************** 
+ Name: Sarah Masimore (sm66498) and Sam Harper (slh3927)
+ Lab Number: Officially 16415, in reality MW 9-10:30am
+ TA: Andrew Lynch  
+ Created Date: 10/29/2017
+ Last Updated Date: 11/05/2017
+ Description: API for initializing and updating LCD.
+ Hardware: 
+	 ST7735
+ Hardware Configuration: 
+   See schematic.
+ */
+
 #include <stdint.h>
 #include "ST7735.h"
 #include "LCD.h"
 #include "ECSMain.h"
 
+// PRIVATE VARS
+
 const int16_t DefaultColor = ST7735_CYAN;
 const int16_t EditingLimitsColor = ST7735_MAGENTA;
 
 
+/**************LCD_Init***************
+ Description: Inits ST7735.
+ Inputs: none
+ Outputs: none
+*/
 void LCD_Init() {
   ST7735_InitR(INITR_REDTAB);
-  // draw all sections
 }
 
-
-/**
-  Soft Limit: XX.X% (purple when editing)
-  Hard Limit: YY.Y% (purple when editing)
-
-  CURRENT CO2 LEVEL: ZZ.Z% (green, yellow, or red)
-
-  Producing O2...
-
-**/
-
-void LCD_Update() {
-  // Create a copy of global vars to prevent critical section.
-  EditMode_t editMode = ECSMain_EditMode;
-  int softLimit = ECSMain_SoftLimit;
-  int hardLimit = ECSMain_HardLimit;
-  int co2Val = ECSMain_CO2Val;
-
+/**************LCD_Update***************
+ Description: Updates LCD based on ECSMain's global vars.
+ Inputs:
+	softLimit: int cached soft limit for system
+	hardLimit: int cached hard limit for system
+	co2Val: int cached CO2 value
+ Outputs: none
+*/
+void LCD_Update(int softLimit, int hardLimit, int co2Val) {
   drawSoftLimitSection(
-    editMode == EM_SOFT_LIMIT ? EditingLimitsColor : DefaultColor,
+    ECSMain_EditMode == EM_SOFT_LIMIT ? EditingLimitsColor : DefaultColor,
     softLimit
   );
   drawHardLimitSection(
-    editMode == EM_HARD_LIMIT ? EditingLimitsColor : DefaultColor,
+    ECSMain_EditMode == EM_HARD_LIMIT ? EditingLimitsColor : DefaultColor,
     hardLimit
   );
   ST7735_DrawString(1, 6, (uint8_t *)"___________________", DefaultColor);
   
-  drawCO2LevelSection(co2Val, softLimit, hardLimit);
+  drawCO2LevelSection(co2Val);
   drawProducingO2Section();
 }
 
+/**************drawSoftLimitSection***************
+ Description: Draws soft limit label and value on LCD.
+	color: Color to draw soft limit. Changes based on edit mode.
+	softLimit: int soft limit value.
+ Outputs: none
+*/
 void drawSoftLimitSection(int16_t color, int softLimit) {
   ST7735_DrawString(2, 2, (uint8_t *)"Soft Limit:", color);
   
@@ -60,6 +76,12 @@ void drawSoftLimitSection(int16_t color, int softLimit) {
   ST7735_DrawString(14, 2, softLimitArr, color);
 }
 
+/**************drawHardLimitSection***************
+ Description: Draws hard limit label and value on LCD.
+	color: Color to draw hard limit. Changes based on edit mode.
+	hardLimit: int hard limit value.
+ Outputs: none
+*/
 void drawHardLimitSection(int16_t color, int hardLimit) {
   ST7735_DrawString(2, 3, (uint8_t *)"Hard Limit:", color);
   
@@ -76,12 +98,17 @@ void drawHardLimitSection(int16_t color, int hardLimit) {
   ST7735_DrawString(14, 3, hardLimitArr, color);
 }
 
-
-void drawCO2LevelSection(int co2Val, int softLimit, int hardLimit) {
+/**************drawCO2LevelSection***************
+ Description: Draws CO2 level with one digit to left or decimal and two to the right.
+ Inputs:
+	co2Val: Current CO2 value to draw.
+ Outputs: none
+*/
+void drawCO2LevelSection(int co2Val) {
   int16_t color;
-  if (co2Val < softLimit) {
+  if (ECSMain_State->led == LED_GREEN) {
     color = ST7735_GREEN;
-  } else if (co2Val >= softLimit && co2Val < hardLimit) {
+  } else if (ECSMain_State->led == LED_YELLOW) {
     color = ST7735_YELLOW;
   } else {
     color = ST7735_RED;
@@ -102,6 +129,11 @@ void drawCO2LevelSection(int co2Val, int softLimit, int hardLimit) {
   ST7735_DrawChar(90, 100, '%', color, ST7735_BLACK, 3);
 }
 
+/**************drawProducingO2Section***************
+ Description: If electrolysis on, print message.
+ Inputs:
+ Outputs: none
+*/
 void drawProducingO2Section() {
   if (ECSMain_State->electrolysis == ELEC_ON) {
     ST7735_DrawString(2, 4, (uint8_t *)"Producing O2...", DefaultColor);
@@ -110,7 +142,12 @@ void drawProducingO2Section() {
 
 // TEST FUNCTION
 
+/**************LCD_Test***************
+ Description: Initializes LCD and updates LCD for testing purposes.
+ Inputs:
+ Outputs: none
+*/
 void LCD_Test() {
   LCD_Init();
-  LCD_Update();
+  LCD_Update(ECSMain_SoftLimit, ECSMain_HardLimit, ECSMain_CO2Val);
 }

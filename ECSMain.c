@@ -1,3 +1,18 @@
+/********** ECSMain.c ************** 
+ Name: Sarah Masimore (sm66498) and Sam Harper (slh3927)
+ Lab Number: Officially 16415, in reality MW 9-10:30am
+ TA: Andrew Lynch  
+ Created Date: 10/29/2017
+ Last Updated Date: 11/05/2017
+ Description: Main controller for ECS. Initializes modules and transitions
+	system between states. Test mode managed through TestMode variable to
+	test each module independently.
+ Hardware: 
+   See schematic.
+ Hardware Configuration: 
+   See schematic.
+ */
+
 #include <stdint.h>
 #include <assert.h>
 #include "ECSMain.h"
@@ -9,16 +24,17 @@
 #include "CO2Sensor.h"
 #include "LCD.h"
 
-// Test mode
+// TEST MODE
+
 // TM_OFF: None, regular run mode
 // TM_STATES: Cycles system through states
-// TM_LEDS: Calls LED_Test
-// TM_SOUND: Calls Sound_Test
-// TM_ELEC: Calls Electrolysis_Test
-// TM_CO2SENSOR: Calls CO2Sensor_Test
-// TM_LCD: Calls LCD_Test
+// TM_LEDS: Calls LED_Test, cycles through LED's.
+// TM_SOUND: Calls Sound_Test, cyles through sound on/off.
+// TM_ELEC: Calls Electrolysis_Test, cycles through elec on/off.
+// TM_CO2SENSOR: Calls CO2Sensor_Test, samples ADC once.
+// TM_LCD: Calls LCD_Test, inits and updates LCD once.
 enum TestMode {TM_OFF, TM_STATES, TM_LEDS, TM_SOUND, 
-               TM_ELEC, TM_CO2SENSOR, TM_LCD} TestMode = TM_STATES;
+               TM_ELEC, TM_CO2SENSOR, TM_LCD} TestMode = TM_OFF;
 
 // PUBLIC GLOBAL VARS
             
@@ -36,21 +52,21 @@ int ECSMain_PrevEditMode;
 
 // PRIVATE GLOBAL VARS
 
-// CO2 level < soft limit
+// Represents CO2 level < soft limit state.
 const ECSState_t ECSStateNoLimitPassed = {
   LED_GREEN, 
   SOUND_OFF, 
   ELEC_OFF,
 };
 
-// CO2 level >= soft limit && CO2 level < hard limit
+// Represents CO2 level >= soft limit && CO2 level < hard limit state.
 const ECSState_t ECSStateSoftLimitPassed = {
   LED_YELLOW, 
   SOUND_OFF, 
   ELEC_ON,
 };
 
-// CO2 level >= hard limit
+// Represents CO2 level >= hard limit state.
 const ECSState_t ECSStateHardLimitPassed = {
   LED_RED, 
   SOUND_ON, 
@@ -62,33 +78,20 @@ const ECSState_t * PrevECSState;
 int main() {
   PLL_Init(Bus80MHz);
   
+	// Handle test modes.
   if (TestMode != TM_OFF) {
     mainTest();
     return 0;
   }
   
+	// Initialize system.
   initECSState();
   initECSModules();
-  updateECSState();
-  updateECSSystem();
+	updateECSState(ECSMain_SoftLimit, ECSMain_HardLimit);
+	updateECSSystem(ECSMain_SoftLimit, ECSMain_HardLimit, ECSMain_CO2Val);
   
   while (1) {
-    // If limits or CO2 level has changed, update ECS state.
-    if (ECSMain_SoftLimit != ECSMain_PrevSoftLimit ||
-        ECSMain_HardLimit != ECSMain_PrevHardLimit ||
-        ECSMain_CO2ADCVal != ECSMain_PrevCO2ADCVal) {
-        ECSMain_CO2Val = CO2Sensor_ADCToPercCO2(ECSMain_CO2ADCVal);
-      updateECSState();
-    }
-      
-    if (ECSMain_State != PrevECSState) {
-      updateECSSystem();
-    } else {
-      // If state hasn't changed, we still need to update LCD.
-      LCD_Update();
-    }
-      
-    updatePrevValues();
+		updateECS();
   }
   
   return 0;
@@ -111,12 +114,11 @@ void initECSState() {
   ECSMain_CO2Val = 0;
   
   // Set prev variables to track state changes.
-  updatePrevValues();
+  updatePrevValues(ECSMain_CO2ADCVal);
 }
 
 /**************initECSModules***************
  Description: Initialize each module.
-  state.
  Inputs: none
  Outputs: none
 */
@@ -131,15 +133,46 @@ void initECSModules() {
   EnableInterrupts();
 }
 
-/**************updatePrevValues***************
- Description: Set previous state values to current state.
-  state.
+/**************updateECS***************
+ Description: Update ECS based on changes to global vars.
  Inputs: none
  Outputs: none
 */
-void updatePrevValues() {
+void updateECS() {
+	// Cache current values to avoid critical sections.
+	int currCO2ADCVal = ECSMain_CO2ADCVal;
+  int softLimit = ECSMain_SoftLimit;
+  int hardLimit = ECSMain_HardLimit;
+  int co2Val = ECSMain_CO2Val;
+	
+	// If limits or CO2 level has changed, update ECS state.
+	if (softLimit != ECSMain_PrevSoftLimit ||
+			hardLimit != ECSMain_PrevHardLimit ||
+			currCO2ADCVal != ECSMain_PrevCO2ADCVal) {
+			ECSMain_CO2Val = CO2Sensor_ADCToPercCO2(currCO2ADCVal);
+		updateECSState(softLimit, hardLimit);
+	}
+	
+	// If state has changed, update system. If not, still need to update LCD.
+	if (ECSMain_State != PrevECSState) {
+		updateECSSystem(softLimit, hardLimit, co2Val);
+	} else {
+		LCD_Update(softLimit, hardLimit, co2Val);
+	}
+		
+	updatePrevValues(currCO2ADCVal);
+}
+
+/**************updatePrevValues***************
+ Description: Set previous state values to current state. Need to pass in CO2
+	ADC value since using global var will result in a critical section.
+ Inputs: 
+	currCO2ADCVal: int containing cached CO2 ADC value
+ Outputs: none 
+*/
+void updatePrevValues(int currCO2ADCVal) {
   PrevECSState = ECSMain_State;
-  ECSMain_PrevCO2ADCVal = ECSMain_CO2ADCVal;
+  ECSMain_PrevCO2ADCVal = currCO2ADCVal;
   ECSMain_PrevCO2Val = ECSMain_CO2Val;
   ECSMain_PrevSoftLimit = ECSMain_SoftLimit;
   ECSMain_PrevHardLimit = ECSMain_HardLimit;
@@ -149,10 +182,12 @@ void updatePrevValues() {
 /**************updateECSState***************
  Description: Based on current CO2 level and soft/hard limits, update the ECS
   state.
- Inputs: none
+ Inputs: 
+	softLimit: int cached soft limit for system
+	hardLimit: int cached hard limit for system
  Outputs: none
 */
-void updateECSState() {
+void updateECSState(int softLimit, int hardLimit) {
   if (ECSMain_CO2Val < ECSMain_SoftLimit) {
     ECSMain_State = &ECSStateNoLimitPassed;
   } else if (ECSMain_CO2Val >= ECSMain_SoftLimit && 
@@ -164,19 +199,25 @@ void updateECSState() {
 }
 
 /**************updateECSSystem***************
- Description: Update electrolysis, LED, and sound. LCD will be
-  // updated in main since LCD may have to change even if state has not (e.g.
-  // edit mode changing).
- Inputs: none
+ Description: Update electrolysis, LED, sound, and LCD.
+ Inputs:
+	softLimit: int cached soft limit for system
+	hardLimit: int cached hard limit for system
+	co2Val: int cached CO2 value
  Outputs: none
 */
-void updateECSSystem() {
+void updateECSSystem(int softLimit, int hardLimit, int co2Val) {
   updateElectrolysis();
   updateLED();
   updateSound();
-  LCD_Update();
+  LCD_Update(softLimit, hardLimit, co2Val);
 }  
 
+/**************updateElectrolysis***************
+ Description: Based on system state, updates electrolysis state.
+ Inputs: none
+ Outputs: none
+*/
 void updateElectrolysis() {
   if (ECSMain_State->electrolysis == ELEC_ON) {
     Electrolysis_On();
@@ -185,6 +226,11 @@ void updateElectrolysis() {
   }
 }
 
+/**************updateLED***************
+ Description: Based on system state, updates LED state.
+ Inputs: none
+ Outputs: none
+*/
 void updateLED() {
   // Disable interrupts since Sound.c uses same Port F to avoid a critical
   // section.
@@ -203,6 +249,11 @@ void updateLED() {
   EnableInterrupts();
 }
 
+/**************updateSound***************
+ Description: Based on system state, updates sound state.
+ Inputs: none
+ Outputs: none
+*/
 void updateSound() {
   if (ECSMain_State->sound == SOUND_ON) {
     Sound_On();
@@ -213,6 +264,12 @@ void updateSound() {
 
 // TEST VARS AND FUNCTIONS
 
+/**************mainTest***************
+ Description: Based on test mode, either execute global testStates or runs
+	module-specifid tests.
+ Inputs: none
+ Outputs: none
+*/
 void mainTest() {
   initECSState();
   switch (TestMode) {
@@ -252,7 +309,13 @@ const TestVars_t testStatesCases[9] = {
   {20, 50, EM_HARD_LIMIT, 60, &ECSStateHardLimitPassed},
 };
 
-// integration test, go through each state
+/**************testStates***************
+ Description: Goes through test scenarios defined in testStatesCases and
+	verifies state transitions are correct. Additionally this test is an
+	integration test with all modules initialized and running for each state.
+ Inputs: none
+ Outputs: none
+*/
 void testStates(){
   initECSState();
   initECSModules();
@@ -261,14 +324,19 @@ void testStates(){
     for (int i = 0; i < testStatesCasesSize; i++) {
       TestVars_t testVars = testStatesCases[i];
       testHelperOverrideVars(testVars);
-      updateECSState();
-      updateECSSystem();
+      updateECSState(ECSMain_SoftLimit, ECSMain_HardLimit);
+      updateECSSystem(ECSMain_SoftLimit, ECSMain_HardLimit, ECSMain_CO2Val);
       assert(testVars.expectedState == ECSMain_State);  
       testWait();
     }
   }
 }
 
+/**************testHelperOverrideVars***************
+ Description: Overrides global vars with test vars.
+ Inputs: none
+ Outputs: none
+*/
 void testHelperOverrideVars(TestVars_t testVars) {
   ECSMain_SoftLimit = testVars.softLimit;
   ECSMain_HardLimit = testVars.hardLimit;
@@ -276,6 +344,11 @@ void testHelperOverrideVars(TestVars_t testVars) {
   ECSMain_CO2Val = testVars.co2Val;
 }
 
+/**************testWait***************
+ Description: Helper function to wait between test cases.
+ Inputs: none
+ Outputs: none
+*/
 static void testWait() {
   for(int j = 0; j < 8000000; j++) {};
 }

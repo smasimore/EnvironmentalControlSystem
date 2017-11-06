@@ -24,7 +24,7 @@
 // PUBLIC FUNCTIONS
 
 /**************Switch_Init***************
- Description: Initializes PB4-0 to be used as switches.
+ Description: Initializes PB0-2 to be used as switches.
  Inputs: none
  Outputs: none
 */

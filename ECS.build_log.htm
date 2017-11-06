@@ -4,7 +4,7 @@
 <h1>µVision Build Log</h1>
 <h2>Project:</h2>
 C:\Users\Sarah\Documents\Fall_2017\EE445L\EnvironmentalControlSystem\ECS.uvproj
-Project File Date:  10/30/2017
+Project File Date:  11/05/2017
 
 <h2>Output:</h2>
 Rebuild target 'ECS'
@@ -13,24 +13,139 @@ compiling PLL.c...
 compiling Sound.c...
 compiling Switch.c...
 compiling ECSMain.c...
-ECSMain.c(94): warning:  #111-D: statement is unreachable
+ECSMain.c(97): warning:  #111-D: statement is unreachable
     return 0;
 ECSMain.c: 1 warning, 0 errors
 compiling LED.c...
 compiling Electrolysis.c...
 compiling CO2Sensor.c...
-CO2Sensor.c(85): warning:  #550-D: variable "testADCVal" was set but never used
-    int testADCVal;
-CO2Sensor.c: 1 warning, 0 errors
 compiling LCD.c...
 compiling ST7735.c...
 linking...
-Program Size: Code=7060 RO-data=2256 RW-data=108 ZI-data=1124  
+Program Size: Code=7200 RO-data=2256 RW-data=108 ZI-data=1124  
+".\ECS.axf" - 0 Error(s), 1 Warning(s).
+iling ST7735.c...
+linking...
+Program Size: Code=7200 RO-data=2256 RW-data=108 ZI-data=1124  
 ".\ECS.axf" - 0 Error(s), 2 Warning(s).
-</pre>
-</body>
-</html>
-6pm.h"
-ST7735.c: 0 warnings, 1 error
-".\ECS.axf" - 1 Error(s), 2 Warning(s).
+" - 1 Error(s), 2 Warning(s).
+Target not created
+1 error
+compiling ST7735.c...
+".\ECS.axf" - 2 Error(s), 2 Warning(s).
+Target not created
+ 1 error
+compiling ST7735.c...
+".\ECS.axf" - 3 Error(s), 2 Warning(s).
+Target not created
+.c: 1 warning, 0 errors
+compiling LCD.c...
+LCD.c(122): error:  #165: too few arguments in function call
+    LCD_Update();
+LCD.c: 0 warnings, 1 error
+compiling ST7735.c...
+".\ECS.axf" - 4 Error(s), 2 Warning(s).
+Target not created
+: error:  #101: "SOUND_ON" has already been declared in the current scope
+    enum sound {SOUND_OFF, SOUND_ON} sound;
+ECSMain.h(22): error:  #101: "electrolysis" has already been declared in the current scope
+    enum electrolysis {ELEC_OFF, ELEC_ON} electrolysis;
+ECSMain.h(22): error:  #101: "ELEC_OFF" has already been declared in the current scope
+    enum electrolysis {ELEC_OFF, ELEC_ON} electrolysis;
+ECSMain.h(22): error:  #101: "ELEC_ON" has already been declared in the current scope
+    enum electrolysis {ELEC_OFF, ELEC_ON} electrolysis;
+ECSMain.h(23): error:  #256: invalid redeclaration of type name "ECSState_t" (declared at line 23)
+  } ECSState_t;
+ECSMain.h(28): error:  #101: "EditMode_t" has already been declared in the current scope
+  typedef enum EditMode_t {EM_NONE, EM_SOFT_LIMIT, EM_HARD_LIMIT} EditMode_t;
+ECSMain.h(28): error:  #101: "EM_NONE" has already been declared in the current scope
+  typedef enum EditMode_t {EM_NONE, EM_SOFT_LIMIT, EM_HARD_LIMIT} EditMode_t;
+ECSMain.h(28): error:  #101: "EM_SOFT_LIMIT" has already been declared in the current scope
+  typedef enum EditMode_t {EM_NONE, EM_SOFT_LIMIT, EM_HARD_LIMIT} EditMode_t;
+ECSMain.h(28): error:  #101: "EM_HARD_LIMIT" has already been declared in the current scope
+  typedef enum EditMode_t {EM_NONE, EM_SOFT_LIMIT, EM_HARD_LIMIT} EditMode_t;
+ECSMain.h(28): error:  #256: invalid redeclaration of type name "EditMode_t" (declared at line 28)
+  typedef enum EditMode_t {EM_NONE, EM_SOFT_LIMIT, EM_HARD_LIMIT} EditMode_t;
+ECSMain.h(29): error:  #147: declaration is incompatible with "EditMode_t ECSMain_EditMode" (declared at line 29)
+  extern EditMode_t ECSMain_EditMode;
+ECSMain.h(31): error:  #147: declaration is incompatible with "const ECSState_t *ECSMain_State" (declared at line 31)
+  extern const ECSState_t * ECSMain_State;
+ECSMain.h(59): error:  #101: "TestVars_t" has already been declared in the current scope
+  typedef struct TestVars_t {
+ECSMain.h(65): error:  #256: invalid redeclaration of type name "TestVars_t" (declared at line 65)
+  } TestVars_t;
+ECSMain.h(69): error:  #147-D: declaration is incompatible with "void testHelperOverrideVars(TestVars_t)" (declared at line 69)
+  void testHelperOverrideVars(TestVars_t testVars);
+ECSMain.c(97): warning:  #111-D: statement is unreachable
+    return 0;
+ECSMain.c(209): error:  #165: too few arguments in function call
+    LCD_Update();
+ECSMain.c: 1 warning, 23 errors
+compiling LED.c...
+compiling Electrolysis.c...
+compiling CO2Sensor.c...
+CO2Sensor.c(94): warning:  #550-D: variable "testADCVal" was set but never used
+    int testADCVal;
+CO2Sensor.c: 1 warning, 0 errors
+compiling LCD.c...
+ECSMain.h(19): error:  #101: "ECSState_t" has already been declared in the current scope
+  typedef struct ECSState_t {
+ECSMain.h(20): error:  #101: "led" has already been declared in the current scope
+    enum led {LED_GREEN, LED_YELLOW, LED_RED} led;
+ECSMain.h(20): error:  #101: "LED_GREEN" has already been declared in the current scope
+    enum led {LED_GREEN, LED_YELLOW, LED_RED} led;
+ECSMain.h(20): error:  #101: "LED_YELLOW" has already been declared in the current scope
+    enum led {LED_GREEN, LED_YELLOW, LED_RED} led;
+ECSMain.h(20): error:  #101: "LED_RED" has already been declared in the current scope
+    enum led {LED_GREEN, LED_YELLOW, LED_RED} led;
+ECSMain.h(21): error:  #101: "sound" has already been declared in the current scope
+    enum sound {SOUND_OFF, SOUND_ON} sound;
+ECSMain.h(21): error:  #101: "SOUND_OFF" has already been declared in the current scope
+    enum sound {SOUND_OFF, SOUND_ON} sound;
+ECSMain.h(21): error:  #101: "SOUND_ON" has already been declared in the current scope
+    enum sound {SOUND_OFF, SOUND_ON} sound;
+ECSMain.h(22): error:  #101: "electrolysis" has already been declared in the current scope
+    enum electrolysis {ELEC_OFF, ELEC_ON} electrolysis;
+ECSMain.h(22): error:  #101: "ELEC_OFF" has already been declared in the current scope
+    enum electrolysis {ELEC_OFF, ELEC_ON} electrolysis;
+ECSMain.h(22): error:  #101: "ELEC_ON" has already been declared in the current scope
+    enum electrolysis {ELEC_OFF, ELEC_ON} electrolysis;
+ECSMain.h(23): error:  #256: invalid redeclaration of type name "ECSState_t" (declared at line 23)
+  } ECSState_t;
+ECSMain.h(28): error:  #101: "EditMode_t" has already been declared in the current scope
+  typedef enum EditMode_t {EM_NONE, EM_SOFT_LIMIT, EM_HARD_LIMIT} EditMode_t;
+ECSMain.h(28): error:  #101: "EM_NONE" has already been declared in the current scope
+  typedef enum EditMode_t {EM_NONE, EM_SOFT_LIMIT, EM_HARD_LIMIT} EditMode_t;
+ECSMain.h(28): error:  #101: "EM_SOFT_LIMIT" has already been declared in the current scope
+  typedef enum EditMode_t {EM_NONE, EM_SOFT_LIMIT, EM_HARD_LIMIT} EditMode_t;
+ECSMain.h(28): error:  #101: "EM_HARD_LIMIT" has already been declared in the current scope
+  typedef enum EditMode_t {EM_NONE, EM_SOFT_LIMIT, EM_HARD_LIMIT} EditMode_t;
+ECSMain.h(28): error:  #256: invalid redeclaration of type name "EditMode_t" (declared at line 28)
+  typedef enum EditMode_t {EM_NONE, EM_SOFT_LIMIT, EM_HARD_LIMIT} EditMode_t;
+ECSMain.h(29): error:  #147: declaration is incompatible with "EditMode_t ECSMain_EditMode" (declared at line 29)
+  extern EditMode_t ECSMain_EditMode;
+ECSMain.h(31): error:  #147: declaration is incompatible with "const ECSState_t *ECSMain_State" (declared at line 31)
+  extern const ECSState_t * ECSMain_State;
+ECSMain.h(59): error:  #101: "TestVars_t" has already been declared in the current scope
+  typedef struct TestVars_t {
+ECSMain.h(65): error:  #256: invalid redeclaration of type name "TestVars_t" (declared at line 65)
+  } TestVars_t;
+ECSMain.h(69): error:  #147-D: declaration is incompatible with "void testHelperOverrideVars(TestVars_t)" (declared at line 69)
+  void testHelperOverrideVars(TestVars_t testVars);
+LCD.c(39): error:  #147-D: declaration is incompatible with "void LCD_Update(EditMode_t, int, int, int)" (declared at line 27 of "LCD.h")
+  void LCD_Update(int softLimit, int hardLimit, int co2Val) {
+LCD.c(45): error:  #20: identifier "editMode" is undefined
+      editMode == EM_HARD_LIMIT ? EditingLimitsColor : DefaultColor,
+LCD.c(122): error:  #165: too few arguments in function call
+    LCD_Update();
+LCD.c: 0 warnings, 25 errors
+compiling ST7735.c...
+".\ECS.axf" - 48 Error(s), 2 Warning(s).
+Target not created
+itMode, int softLimit, int hardLimit, int co2Val) {
+LCD.c(122): error:  #165: too few arguments in function call
+    LCD_Update();
+LCD.c: 0 warnings, 24 errors
+compiling ST7735.c...
+".\ECS.axf" - 48 Error(s), 4 Warning(s).
 Target not created

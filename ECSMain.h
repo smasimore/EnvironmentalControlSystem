@@ -1,3 +1,18 @@
+/********** ECSMain.h ************** 
+ Name: Sarah Masimore (sm66498) and Sam Harper (slh3927)
+ Lab Number: Officially 16415, in reality MW 9-10:30am
+ TA: Andrew Lynch  
+ Created Date: 10/29/2017
+ Last Updated Date: 11/05/2017
+ Description: Main controller for ECS. Initializes modules and transitions
+		system between states. Test mode managed through TestMode variable to
+		test each module independently.
+ Hardware: 
+    See schematic.
+ Hardware Configuration: 
+   See schematic.
+ */
+
 // GLOBAL VARIABLES
 
 // Struct type to contain attributes of the 3 ECS states.
@@ -29,9 +44,10 @@ extern int ECSMain_PrevEditMode;
 void initECSState(void);
 void initECSModules(void);
 
-void updatePrevValues(void);
-void updateECSState(void);
-void updateECSSystem(void);
+void updateECS(void);
+void updatePrevValues(int currCO2ADCVal);
+void updateECSState(int softLimit, int hardLimit);
+void updateECSSystem(int softLimit, int hardLimit, int co2Val);
 void updateElectrolysis(void);
 void updateLED(void);
 void updateSound(void);
