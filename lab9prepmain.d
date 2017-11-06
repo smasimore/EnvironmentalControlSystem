@@ -1,0 +1,11 @@
+.\lab9prepmain.o: Lab9PrepMain.c
+.\lab9prepmain.o: C:\Keil\ARM\ARMCC\bin\..\include\stdint.h
+.\lab9prepmain.o: C:\Keil\ARM\ARMCC\bin\..\include\assert.h
+.\lab9prepmain.o: Lab9PrepMain.h
+.\lab9prepmain.o: PLL.h
+.\lab9prepmain.o: LED.h
+.\lab9prepmain.o: Switch.h
+.\lab9prepmain.o: LCD.h
+.\lab9prepmain.o: ADC.h
+.\lab9prepmain.o: FIFO.h
+.\lab9prepmain.o: UART.h

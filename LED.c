@@ -69,30 +69,3 @@ void LED_RedOn() {
   // Red on
   GPIO_PORTF_DATA_R |= 0x10;
 }
-
-/**************LED_Test***************
- Description: Test function that cycles through green, yellow, and red LEDs.
- Inputs: none
- Outputs: none
-*/
-void LED_Test() {
-  LED_Init();
-  
-  while (1) {
-    LED_GreenOn();
-    testWait();
-    LED_YellowOn();
-    testWait();
-    LED_RedOn();
-    testWait();
-  }
-}
-
-/**************testWait***************
- Description: Helper function to wait between test cases.
- Inputs: none
- Outputs: none
-*/
-static void testWait() {
-  for(int j = 0; j < 8000000; j++) {};
-}

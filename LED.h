@@ -45,11 +45,3 @@ void LED_RedOn(void);
 
 // TEST FUNCTIONS
 
-/**************LED_Test***************
- Description: Test function that cycles through green, yellow, and red LEDs.
- Inputs: none
- Outputs: none
-*/
-void LED_Test(void);
-
-static void testWait(void);
