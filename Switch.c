@@ -17,6 +17,7 @@
 #include <stdint.h>
 #include "inc/tm4c123gh6pm.h"
 #include "Switch.h"
+#include "ECSMain.h"
 
 volatile static unsigned long Last;
 
@@ -115,19 +116,38 @@ void ButtonPressed(){
   switch (data){
     // PB0 pressed, change edit mode
     case 0x01:
-
+      ECSMain_EditMode++;
+      ECSMain_EditMode = (int)ECSMain_EditMode < 3 
+        ? ECSMain_EditMode 
+        : EM_NONE; 
       break;
     default:
       break;
 
     // PB1 pressed, decrement limit
     case 0x02:
-
+      if (ECSMain_EditMode == EM_SOFT_LIMIT) {
+        ECSMain_SoftLimit = ECSMain_SoftLimit == 0 
+          ? 0
+          : ECSMain_SoftLimit - 1;
+      } else if (ECSMain_EditMode == EM_HARD_LIMIT) {
+        ECSMain_HardLimit = ECSMain_HardLimit == ECSMain_SoftLimit
+          ? ECSMain_SoftLimit
+          : ECSMain_HardLimit - 1;
+      }
       break;
 
     // PB2 pressed, increment limit
     case 0x04:
-
+      if (ECSMain_EditMode == EM_SOFT_LIMIT) {
+        ECSMain_SoftLimit = ECSMain_SoftLimit == ECSMain_HardLimit 
+          ? ECSMain_HardLimit
+          : ECSMain_SoftLimit + 1;
+      } else if (ECSMain_EditMode == EM_HARD_LIMIT) {
+        ECSMain_HardLimit = ECSMain_HardLimit == 999
+          ? 999
+          : ECSMain_HardLimit + 1;
+      }
       break;
   } 
 }
