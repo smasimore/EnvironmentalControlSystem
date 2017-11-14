@@ -3,12 +3,12 @@
  Lab Number: Officially 16415, in reality MW 9-10:30am
  TA: Andrew Lynch  
  Created Date: 10/29/2017
- Last Updated Date: 11/05/2017
+ Last Updated Date: 11/14/2017
  Description: API initializing sound port and playing sound. Uses PF0 for
     output to speaker, SysTick timer determine when to output to PF0, and
     Timer2 to cycle through an array of notes to play. These notes determine
     the frequency SysTick timer sends output to PF0. Only plays 1 note for 
-		alarm.
+    alarm.
  Hardware: 
     TM4C123G LaunchPad 
     PN2222

@@ -3,7 +3,7 @@
  Lab Number: Officially 16415, in reality MW 9-10:30am
  TA: Andrew Lynch  
  Created Date: 10/29/2017
- Last Updated Date: 11/05/2017
+ Last Updated Date: 11/14/2017
  Description: API initializing sound port and playing sound. Uses PB0 for
     output to speaker, SysTick timer determine when to output to PB0, and
     Timer2 to cycle through an array of notes to play. These notes determine

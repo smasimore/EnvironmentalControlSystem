@@ -3,12 +3,12 @@
  Lab Number: Officially 16415, in reality MW 9-10:30am
  TA: Andrew Lynch  
  Created Date: 10/29/2017
- Last Updated Date: 11/05/2017
+ Last Updated Date: 11/14/2017
  Description: API for initializing and sampling CO2 sensor. Uses PE5, ADC0, and 
-	Timer1A. Modified from ValvanoWare.
+  Timer1A. Modified from ValvanoWare.
  Hardware: 
-		TM4C123G LaunchPad 
-		MQ-135 CO2 Sensor	
+    TM4C123G LaunchPad 
+    MQ-135 CO2 Sensor  
  Hardware Configuration: 
    See schematic.
  */
@@ -37,14 +37,14 @@ void CO2Sensor_Init() {
 */
 int CO2Sensor_ADCToPercCO2(int adcVal) {
   // TODO: Calibrate
-	
-	// .04 = 17.7% inside
-	// 20 outside, humid
-	
-	//x  x = 437
-	// 717 / x * 100 = .04%
-	// x = 1792500
-	
+  
+  // .04 = 17.7% inside
+  // 20 outside, humid
+  
+  //x  x = 437
+  // 717 / x * 100 = .04%
+  // x = 1792500
+  
   return adcVal * 1000 / 4096;
 }
 
@@ -56,7 +56,7 @@ int CO2Sensor_ADCToPercCO2(int adcVal) {
  Outputs: none
 */
 void initPortAndADC() {
-	SYSCTL_RCGCADC_R |= 0x0001; // Activate ADC0 
+  SYSCTL_RCGCADC_R |= 0x0001; // Activate ADC0 
   SYSCTL_RCGCGPIO_R |= 0x10; // Activate clock for Port E
   while((SYSCTL_PRGPIO_R&0x10) != 0x10){};
   GPIO_PORTE_DIR_R &= ~0x20; // Make PE5 input
@@ -74,12 +74,12 @@ void initPortAndADC() {
   ADC0_SSCTL3_R = 0x0006; // No TS0 D0, yes IE0 END0
   ADC0_IM_R &= ~0x0008; // Disable SS3 interrupts
   ADC0_ACTSS_R |= 0x0008; // Enable sample sequencer 3
-		
+    
   ADC0_SAC_R = ADC_AVGING;
-	
-	// Init value
-	ECSMain_CO2ADCVal = getADCVal();
-	ECSMain_CO2Val = CO2Sensor_ADCToPercCO2(ECSMain_CO2ADCVal);
+  
+  // Init value
+  ECSMain_CO2ADCVal = getADCVal();
+  ECSMain_CO2Val = CO2Sensor_ADCToPercCO2(ECSMain_CO2ADCVal);
 }
 
 /**************initTimer1A***************
@@ -104,7 +104,7 @@ void initTimer1A() {
 
 /**************Timer1A_Handler***************
  Description: Handles Timer1A interrupt. Gets ADC value and stores in ECSMain
-	global variable.
+  global variable.
  Inputs: none
  Outputs: none
 */
@@ -115,7 +115,7 @@ void Timer1A_Handler() {
 
 /**************getADCVal***************
  Description: Gets ADC value from ADC0.
-	global variable.
+  global variable.
  Inputs: none
  Outputs: int ADC value
 */
@@ -133,7 +133,7 @@ int getADCVal() {
 
 /**************CO2Sensor_Test***************
  Description: Gets ADC value, waits, and repeats.
-	global variable.
+  global variable.
  Inputs: none
  Outputs: none
 */

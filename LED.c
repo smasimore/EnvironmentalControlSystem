@@ -3,12 +3,12 @@
  Lab Number: Officially 16415, in reality MW 9-10:30am
  TA: Andrew Lynch  
  Created Date: 10/29/2017
- Last Updated Date: 11/05/2017
+ Last Updated Date: 11/14/2017
  Description: API for initializing and controling the green, yellow, and red
-	LEDs.
+  LEDs.
  Hardware:
     TM4C123G LaunchPad  
-		Green, Yellow, and Red LEDs
+    Green, Yellow, and Red LEDs
  Hardware Configuration: 
    See schematic.
  */

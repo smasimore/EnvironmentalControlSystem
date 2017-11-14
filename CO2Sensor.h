@@ -3,12 +3,12 @@
  Lab Number: Officially 16415, in reality MW 9-10:30am
  TA: Andrew Lynch  
  Created Date: 10/29/2017
- Last Updated Date: 11/05/2017
+ Last Updated Date: 11/14/2017
  Description: API for initializing and sampling CO2 sensor. Uses PE5, ADC0, and 
-	Timer1A. Modified from ValvanoWare.
+  Timer1A. Modified from ValvanoWare.
  Hardware: 
-		TM4C123G LaunchPad 
-		MQ-135 CO2 Sensor	
+    TM4C123G LaunchPad 
+    MQ-135 CO2 Sensor  
  Hardware Configuration: 
    See schematic.
  */
@@ -39,7 +39,7 @@ int getADCVal(void);
 
 /**************CO2Sensor_Test***************
  Description: Gets ADC value, waits, and repeats.
-	global variable.
+  global variable.
  Inputs: none
  Outputs: none
 */

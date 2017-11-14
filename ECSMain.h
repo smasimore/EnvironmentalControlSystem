@@ -3,10 +3,10 @@
  Lab Number: Officially 16415, in reality MW 9-10:30am
  TA: Andrew Lynch  
  Created Date: 10/29/2017
- Last Updated Date: 11/05/2017
+ Last Updated Date: 11/14/2017
  Description: Main controller for ECS. Initializes modules and transitions
-		system between states. Test mode managed through TestMode variable to
-		test each module independently.
+    system between states. Test mode managed through TestMode variable to
+    test each module independently.
  Hardware: 
     See schematic.
  Hardware Configuration: 

@@ -5,8 +5,8 @@
  Created Date: 10/28/2017
  Last Updated Date: 10/29/2017
  Description: API for initializing and handling switches. 3 switches, one 
-	changes edit mode, one increments the value being edited, and the last
-	decrements the value being edited.
+  changes edit mode, one increments the value being edited, and the last
+  decrements the value being edited.
  Hardware: 
     TM4C123G LaunchPad 
     3 Switches
@@ -107,7 +107,7 @@ void Timer0A_Handler(){
 
  /**************ButtonPressed***************
  Description: Determines which button was pressed and updates the relevant 
-	ECSMain global variables.
+  ECSMain global variables.
  Inputs: none
  Outputs: none
 */

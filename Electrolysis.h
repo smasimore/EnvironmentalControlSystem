@@ -3,10 +3,10 @@
  Lab Number: Officially 16415, in reality MW 9-10:30am
  TA: Andrew Lynch  
  Created Date: 10/29/2017
- Last Updated Date: 11/05/2017
- Description: API for initializing and controling the electrolysis reaction.
+ Last Updated Date: 11/14/2017
+ Description: API for initializing and controlling the electrolysis reaction.
  Hardware: 
-	 See schematic.
+   See schematic.
  Hardware Configuration: 
    See schematic.
  */
