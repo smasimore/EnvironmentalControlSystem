@@ -35,15 +35,13 @@
 // TM_LCD: Calls LCD_Test, inits and updates LCD once.
 enum TestMode {TM_OFF, TM_STATES, TM_LEDS, TM_SOUND, 
                TM_ELEC, TM_CO2SENSOR, TM_LCD} TestMode = TM_OFF;
-
-// PUBLIC GLOBAL VARS
             
 const ECSState_t * ECSMain_State;                
 int ECSMain_CO2ADCVal; // 0 - 4095
-int ECSMain_SoftLimit; // 0 - 999, resolution of .01
-int ECSMain_HardLimit; // 0 - 999, resolution of .01
+int ECSMain_SoftLimit; // 0 - 999, resolution of .1
+int ECSMain_HardLimit; // 0 - 999, resolution of .1
 EditMode_t ECSMain_EditMode = EM_NONE;
-int ECSMain_CO2Val; // 0 - 999, resolution of .01
+int ECSMain_CO2Val; // 0 - 999, resolution of .1
 int ECSMain_PrevCO2ADCVal;
 int ECSMain_PrevCO2Val;
 int ECSMain_PrevSoftLimit;

@@ -504,98 +504,98 @@ Image Symbol Table
     .text                                    0x0000051c   Section        0  defsig_general.o(.text)
     i.ButtonPressed                          0x00000550   Section        0  switch.o(i.ButtonPressed)
     i.CO2Sensor_ADCToPercCO2                 0x00000628   Section        0  co2sensor.o(i.CO2Sensor_ADCToPercCO2)
-    i.CO2Sensor_Init                         0x0000063c   Section        0  co2sensor.o(i.CO2Sensor_Init)
-    i.CO2Sensor_Test                         0x00000648   Section        0  co2sensor.o(i.CO2Sensor_Test)
-    i.Delay1ms                               0x00000658   Section        0  st7735.o(i.Delay1ms)
-    i.Electrolysis_Init                      0x00000678   Section        0  electrolysis.o(i.Electrolysis_Init)
-    i.Electrolysis_Off                       0x000006f8   Section        0  electrolysis.o(i.Electrolysis_Off)
-    i.Electrolysis_On                        0x00000710   Section        0  electrolysis.o(i.Electrolysis_On)
-    i.Electrolysis_Test                      0x00000728   Section        0  electrolysis.o(i.Electrolysis_Test)
-    i.GPIOPortBArm                           0x00000740   Section        0  switch.o(i.GPIOPortBArm)
-    GPIOPortBArm                             0x00000741   Thumb Code    56  switch.o(i.GPIOPortBArm)
-    i.GPIOPortB_Handler                      0x00000784   Section        0  switch.o(i.GPIOPortB_Handler)
-    i.LCD_Init                               0x000007b4   Section        0  lcd.o(i.LCD_Init)
-    i.LCD_Test                               0x000007c0   Section        0  lcd.o(i.LCD_Test)
-    i.LCD_Update                             0x000007e4   Section        0  lcd.o(i.LCD_Update)
-    i.LED_GreenOn                            0x00000854   Section        0  led.o(i.LED_GreenOn)
-    i.LED_Init                               0x0000087c   Section        0  led.o(i.LED_Init)
-    i.LED_RedOn                              0x000008f8   Section        0  led.o(i.LED_RedOn)
-    i.LED_Test                               0x00000920   Section        0  led.o(i.LED_Test)
-    i.LED_YellowOn                           0x00000940   Section        0  led.o(i.LED_YellowOn)
-    i.PLL_Init                               0x00000968   Section        0  pll.o(i.PLL_Init)
-    i.ST7735_DrawChar                        0x000009e4   Section        0  st7735.o(i.ST7735_DrawChar)
-    i.ST7735_DrawCharS                       0x00000af0   Section        0  st7735.o(i.ST7735_DrawCharS)
-    i.ST7735_DrawPixel                       0x00000be4   Section        0  st7735.o(i.ST7735_DrawPixel)
-    i.ST7735_DrawString                      0x00000c30   Section        0  st7735.o(i.ST7735_DrawString)
-    i.ST7735_FillRect                        0x00000c84   Section        0  st7735.o(i.ST7735_FillRect)
-    i.ST7735_FillScreen                      0x00000d30   Section        0  st7735.o(i.ST7735_FillScreen)
-    i.ST7735_InitR                           0x00000d54   Section        0  st7735.o(i.ST7735_InitR)
-    i.ST7735_SetCursor                       0x00000dd0   Section        0  st7735.o(i.ST7735_SetCursor)
-    i.Sound_Init                             0x00000df0   Section        0  sound.o(i.Sound_Init)
-    i.Sound_Off                              0x00000f18   Section        0  sound.o(i.Sound_Off)
-    i.Sound_On                               0x00000f2c   Section        0  sound.o(i.Sound_On)
-    i.Sound_Test                             0x00000f40   Section        0  sound.o(i.Sound_Test)
-    i.Switch_Init                            0x00000f58   Section        0  switch.o(i.Switch_Init)
-    i.SysTick_Handler                        0x00001010   Section        0  sound.o(i.SysTick_Handler)
-    i.Timer0A_Handler                        0x00001018   Section        0  switch.o(i.Timer0A_Handler)
-    i.Timer0Arm                              0x00001040   Section        0  switch.o(i.Timer0Arm)
-    Timer0Arm                                0x00001041   Thumb Code    72  switch.o(i.Timer0Arm)
-    i.Timer1A_Handler                        0x00001098   Section        0  co2sensor.o(i.Timer1A_Handler)
-    i.Timer2A_Handler                        0x000010b4   Section        0  sound.o(i.Timer2A_Handler)
-    i.commandList                            0x000010f0   Section        0  st7735.o(i.commandList)
-    commandList                              0x000010f1   Thumb Code    86  st7735.o(i.commandList)
-    i.commonInit                             0x00001148   Section        0  st7735.o(i.commonInit)
-    commonInit                               0x00001149   Thumb Code   340  st7735.o(i.commonInit)
-    i.drawCO2LevelSection                    0x000012cc   Section        0  lcd.o(i.drawCO2LevelSection)
-    i.drawHardLimitSection                   0x000013bc   Section        0  lcd.o(i.drawHardLimitSection)
-    i.drawProducingO2Section                 0x0000144c   Section        0  lcd.o(i.drawProducingO2Section)
-    i.drawSoftLimitSection                   0x0000147c   Section        0  lcd.o(i.drawSoftLimitSection)
-    i.getADCVal                              0x0000150c   Section        0  co2sensor.o(i.getADCVal)
-    i.initECSModules                         0x00001538   Section        0  ecsmain.o(i.initECSModules)
-    i.initECSState                           0x0000155c   Section        0  ecsmain.o(i.initECSState)
-    i.initPortAndADC                         0x000015a4   Section        0  co2sensor.o(i.initPortAndADC)
-    i.initTimer1A                            0x000016b4   Section        0  co2sensor.o(i.initTimer1A)
-    i.main                                   0x00001724   Section        0  ecsmain.o(i.main)
-    i.mainTest                               0x00001778   Section        0  ecsmain.o(i.mainTest)
-    i.playSound                              0x000017c0   Section        0  sound.o(i.playSound)
-    i.pushColor                              0x000017fc   Section        0  st7735.o(i.pushColor)
-    pushColor                                0x000017fd   Thumb Code    18  st7735.o(i.pushColor)
-    i.setAddrWindow                          0x00001810   Section        0  st7735.o(i.setAddrWindow)
-    setAddrWindow                            0x00001811   Thumb Code   106  st7735.o(i.setAddrWindow)
-    i.soundOut                               0x00001884   Section        0  sound.o(i.soundOut)
-    i.testHelperOverrideVars                 0x000018b0   Section        0  ecsmain.o(i.testHelperOverrideVars)
-    i.testStates                             0x000018e0   Section        0  ecsmain.o(i.testStates)
-    i.testWait                               0x00001998   Section        0  sound.o(i.testWait)
-    testWait                                 0x00001999   Thumb Code    14  sound.o(i.testWait)
-    i.testWait                               0x000019ac   Section        0  ecsmain.o(i.testWait)
-    testWait                                 0x000019ad   Thumb Code    14  ecsmain.o(i.testWait)
-    i.testWait                               0x000019c0   Section        0  led.o(i.testWait)
-    testWait                                 0x000019c1   Thumb Code    14  led.o(i.testWait)
-    i.testWait                               0x000019d4   Section        0  electrolysis.o(i.testWait)
-    testWait                                 0x000019d5   Thumb Code    14  electrolysis.o(i.testWait)
-    i.testWait                               0x000019e8   Section        0  co2sensor.o(i.testWait)
-    testWait                                 0x000019e9   Thumb Code    14  co2sensor.o(i.testWait)
-    i.updateECS                              0x000019fc   Section        0  ecsmain.o(i.updateECS)
-    i.updateECSState                         0x00001a8c   Section        0  ecsmain.o(i.updateECSState)
-    i.updateECSSystem                        0x00001ae4   Section        0  ecsmain.o(i.updateECSSystem)
-    i.updateElectrolysis                     0x00001b04   Section        0  ecsmain.o(i.updateElectrolysis)
-    i.updateLED                              0x00001b20   Section        0  ecsmain.o(i.updateLED)
-    i.updatePrevValues                       0x00001b58   Section        0  ecsmain.o(i.updatePrevValues)
-    i.updateSound                            0x00001bb4   Section        0  ecsmain.o(i.updateSound)
-    i.writecommand                           0x00001bd0   Section        0  st7735.o(i.writecommand)
-    writecommand                             0x00001bd1   Thumb Code    40  st7735.o(i.writecommand)
-    i.writedata                              0x00001c00   Section        0  st7735.o(i.writedata)
-    writedata                                0x00001c01   Thumb Code    24  st7735.o(i.writedata)
-    .constdata                               0x00001c20   Section        8  sound.o(.constdata)
-    Notes                                    0x00001c20   Data           8  sound.o(.constdata)
-    .constdata                               0x00001c28   Section      196  ecsmain.o(.constdata)
-    .constdata                               0x00001cec   Section     2018  st7735.o(.constdata)
-    Font                                     0x00001cec   Data        1275  st7735.o(.constdata)
-    Bcmd                                     0x000021e7   Data         103  st7735.o(.constdata)
-    Rcmd1                                    0x0000224e   Data          59  st7735.o(.constdata)
-    Rcmd2green                               0x00002289   Data          13  st7735.o(.constdata)
-    Rcmd2red                                 0x00002296   Data          13  st7735.o(.constdata)
-    Rcmd3                                    0x000022a3   Data          43  st7735.o(.constdata)
+    i.CO2Sensor_Init                         0x00000656   Section        0  co2sensor.o(i.CO2Sensor_Init)
+    i.CO2Sensor_Test                         0x00000662   Section        0  co2sensor.o(i.CO2Sensor_Test)
+    i.Delay1ms                               0x00000672   Section        0  st7735.o(i.Delay1ms)
+    i.Electrolysis_Init                      0x00000694   Section        0  electrolysis.o(i.Electrolysis_Init)
+    i.Electrolysis_Off                       0x00000714   Section        0  electrolysis.o(i.Electrolysis_Off)
+    i.Electrolysis_On                        0x0000072c   Section        0  electrolysis.o(i.Electrolysis_On)
+    i.Electrolysis_Test                      0x00000744   Section        0  electrolysis.o(i.Electrolysis_Test)
+    i.GPIOPortBArm                           0x0000075c   Section        0  switch.o(i.GPIOPortBArm)
+    GPIOPortBArm                             0x0000075d   Thumb Code    56  switch.o(i.GPIOPortBArm)
+    i.GPIOPortB_Handler                      0x000007a0   Section        0  switch.o(i.GPIOPortB_Handler)
+    i.LCD_Init                               0x000007d0   Section        0  lcd.o(i.LCD_Init)
+    i.LCD_Test                               0x000007dc   Section        0  lcd.o(i.LCD_Test)
+    i.LCD_Update                             0x00000800   Section        0  lcd.o(i.LCD_Update)
+    i.LED_GreenOn                            0x00000870   Section        0  led.o(i.LED_GreenOn)
+    i.LED_Init                               0x00000898   Section        0  led.o(i.LED_Init)
+    i.LED_RedOn                              0x00000914   Section        0  led.o(i.LED_RedOn)
+    i.LED_Test                               0x0000093c   Section        0  led.o(i.LED_Test)
+    i.LED_YellowOn                           0x0000095c   Section        0  led.o(i.LED_YellowOn)
+    i.PLL_Init                               0x00000984   Section        0  pll.o(i.PLL_Init)
+    i.ST7735_DrawChar                        0x00000a00   Section        0  st7735.o(i.ST7735_DrawChar)
+    i.ST7735_DrawCharS                       0x00000b0c   Section        0  st7735.o(i.ST7735_DrawCharS)
+    i.ST7735_DrawPixel                       0x00000c00   Section        0  st7735.o(i.ST7735_DrawPixel)
+    i.ST7735_DrawString                      0x00000c4c   Section        0  st7735.o(i.ST7735_DrawString)
+    i.ST7735_FillRect                        0x00000ca0   Section        0  st7735.o(i.ST7735_FillRect)
+    i.ST7735_FillScreen                      0x00000d4c   Section        0  st7735.o(i.ST7735_FillScreen)
+    i.ST7735_InitR                           0x00000d70   Section        0  st7735.o(i.ST7735_InitR)
+    i.ST7735_SetCursor                       0x00000dec   Section        0  st7735.o(i.ST7735_SetCursor)
+    i.Sound_Init                             0x00000e0c   Section        0  sound.o(i.Sound_Init)
+    i.Sound_Off                              0x00000f34   Section        0  sound.o(i.Sound_Off)
+    i.Sound_On                               0x00000f48   Section        0  sound.o(i.Sound_On)
+    i.Sound_Test                             0x00000f5c   Section        0  sound.o(i.Sound_Test)
+    i.Switch_Init                            0x00000f74   Section        0  switch.o(i.Switch_Init)
+    i.SysTick_Handler                        0x0000102c   Section        0  sound.o(i.SysTick_Handler)
+    i.Timer0A_Handler                        0x00001034   Section        0  switch.o(i.Timer0A_Handler)
+    i.Timer0Arm                              0x0000105c   Section        0  switch.o(i.Timer0Arm)
+    Timer0Arm                                0x0000105d   Thumb Code    72  switch.o(i.Timer0Arm)
+    i.Timer1A_Handler                        0x000010b4   Section        0  co2sensor.o(i.Timer1A_Handler)
+    i.Timer2A_Handler                        0x000010d0   Section        0  sound.o(i.Timer2A_Handler)
+    i.commandList                            0x0000110c   Section        0  st7735.o(i.commandList)
+    commandList                              0x0000110d   Thumb Code    86  st7735.o(i.commandList)
+    i.commonInit                             0x00001164   Section        0  st7735.o(i.commonInit)
+    commonInit                               0x00001165   Thumb Code   340  st7735.o(i.commonInit)
+    i.drawCO2LevelSection                    0x000012e8   Section        0  lcd.o(i.drawCO2LevelSection)
+    i.drawHardLimitSection                   0x000013d8   Section        0  lcd.o(i.drawHardLimitSection)
+    i.drawProducingO2Section                 0x00001468   Section        0  lcd.o(i.drawProducingO2Section)
+    i.drawSoftLimitSection                   0x000014b8   Section        0  lcd.o(i.drawSoftLimitSection)
+    i.getADCVal                              0x00001548   Section        0  co2sensor.o(i.getADCVal)
+    i.initECSModules                         0x00001574   Section        0  ecsmain.o(i.initECSModules)
+    i.initECSState                           0x00001598   Section        0  ecsmain.o(i.initECSState)
+    i.initPortAndADC                         0x000015e0   Section        0  co2sensor.o(i.initPortAndADC)
+    i.initTimer1A                            0x000016f0   Section        0  co2sensor.o(i.initTimer1A)
+    i.main                                   0x00001760   Section        0  ecsmain.o(i.main)
+    i.mainTest                               0x000017b4   Section        0  ecsmain.o(i.mainTest)
+    i.playSound                              0x000017fc   Section        0  sound.o(i.playSound)
+    i.pushColor                              0x00001838   Section        0  st7735.o(i.pushColor)
+    pushColor                                0x00001839   Thumb Code    18  st7735.o(i.pushColor)
+    i.setAddrWindow                          0x0000184c   Section        0  st7735.o(i.setAddrWindow)
+    setAddrWindow                            0x0000184d   Thumb Code   106  st7735.o(i.setAddrWindow)
+    i.soundOut                               0x000018c0   Section        0  sound.o(i.soundOut)
+    i.testHelperOverrideVars                 0x000018ec   Section        0  ecsmain.o(i.testHelperOverrideVars)
+    i.testStates                             0x0000191c   Section        0  ecsmain.o(i.testStates)
+    i.testWait                               0x000019d4   Section        0  sound.o(i.testWait)
+    testWait                                 0x000019d5   Thumb Code    14  sound.o(i.testWait)
+    i.testWait                               0x000019e8   Section        0  ecsmain.o(i.testWait)
+    testWait                                 0x000019e9   Thumb Code    14  ecsmain.o(i.testWait)
+    i.testWait                               0x000019fc   Section        0  led.o(i.testWait)
+    testWait                                 0x000019fd   Thumb Code    14  led.o(i.testWait)
+    i.testWait                               0x00001a10   Section        0  electrolysis.o(i.testWait)
+    testWait                                 0x00001a11   Thumb Code    14  electrolysis.o(i.testWait)
+    i.testWait                               0x00001a24   Section        0  co2sensor.o(i.testWait)
+    testWait                                 0x00001a25   Thumb Code    14  co2sensor.o(i.testWait)
+    i.updateECS                              0x00001a38   Section        0  ecsmain.o(i.updateECS)
+    i.updateECSState                         0x00001ac8   Section        0  ecsmain.o(i.updateECSState)
+    i.updateECSSystem                        0x00001b20   Section        0  ecsmain.o(i.updateECSSystem)
+    i.updateElectrolysis                     0x00001b40   Section        0  ecsmain.o(i.updateElectrolysis)
+    i.updateLED                              0x00001b5c   Section        0  ecsmain.o(i.updateLED)
+    i.updatePrevValues                       0x00001b94   Section        0  ecsmain.o(i.updatePrevValues)
+    i.updateSound                            0x00001bf0   Section        0  ecsmain.o(i.updateSound)
+    i.writecommand                           0x00001c0c   Section        0  st7735.o(i.writecommand)
+    writecommand                             0x00001c0d   Thumb Code    40  st7735.o(i.writecommand)
+    i.writedata                              0x00001c3c   Section        0  st7735.o(i.writedata)
+    writedata                                0x00001c3d   Thumb Code    24  st7735.o(i.writedata)
+    .constdata                               0x00001c5c   Section        8  sound.o(.constdata)
+    Notes                                    0x00001c5c   Data           8  sound.o(.constdata)
+    .constdata                               0x00001c64   Section      196  ecsmain.o(.constdata)
+    .constdata                               0x00001d28   Section     2018  st7735.o(.constdata)
+    Font                                     0x00001d28   Data        1275  st7735.o(.constdata)
+    Bcmd                                     0x00002223   Data         103  st7735.o(.constdata)
+    Rcmd1                                    0x0000228a   Data          59  st7735.o(.constdata)
+    Rcmd2green                               0x000022c5   Data          13  st7735.o(.constdata)
+    Rcmd2red                                 0x000022d2   Data          13  st7735.o(.constdata)
+    Rcmd3                                    0x000022df   Data          43  st7735.o(.constdata)
     .data                                    0x20000000   Section       12  sound.o(.data)
     Note                                     0x20000000   Data           4  sound.o(.data)
     Count                                    0x20000004   Data           4  sound.o(.data)
@@ -847,71 +847,71 @@ Image Symbol Table
     __user_perthread_libspace                0x00000515   Thumb Code     0  libspace.o(.text)
     __default_signal_display                 0x0000051d   Thumb Code    50  defsig_general.o(.text)
     ButtonPressed                            0x00000551   Thumb Code   200  switch.o(i.ButtonPressed)
-    CO2Sensor_ADCToPercCO2                   0x00000629   Thumb Code    20  co2sensor.o(i.CO2Sensor_ADCToPercCO2)
-    CO2Sensor_Init                           0x0000063d   Thumb Code    12  co2sensor.o(i.CO2Sensor_Init)
-    CO2Sensor_Test                           0x00000649   Thumb Code    16  co2sensor.o(i.CO2Sensor_Test)
-    Delay1ms                                 0x00000659   Thumb Code    32  st7735.o(i.Delay1ms)
-    Electrolysis_Init                        0x00000679   Thumb Code   108  electrolysis.o(i.Electrolysis_Init)
-    Electrolysis_Off                         0x000006f9   Thumb Code    16  electrolysis.o(i.Electrolysis_Off)
-    Electrolysis_On                          0x00000711   Thumb Code    16  electrolysis.o(i.Electrolysis_On)
-    Electrolysis_Test                        0x00000729   Thumb Code    24  electrolysis.o(i.Electrolysis_Test)
-    GPIOPortB_Handler                        0x00000785   Thumb Code    40  switch.o(i.GPIOPortB_Handler)
-    LCD_Init                                 0x000007b5   Thumb Code    10  lcd.o(i.LCD_Init)
-    LCD_Test                                 0x000007c1   Thumb Code    24  lcd.o(i.LCD_Test)
-    LCD_Update                               0x000007e5   Thumb Code    86  lcd.o(i.LCD_Update)
-    LED_GreenOn                              0x00000855   Thumb Code    30  led.o(i.LED_GreenOn)
-    LED_Init                                 0x0000087d   Thumb Code   104  led.o(i.LED_Init)
-    LED_RedOn                                0x000008f9   Thumb Code    30  led.o(i.LED_RedOn)
-    LED_Test                                 0x00000921   Thumb Code    32  led.o(i.LED_Test)
-    LED_YellowOn                             0x00000941   Thumb Code    30  led.o(i.LED_YellowOn)
-    PLL_Init                                 0x00000969   Thumb Code   118  pll.o(i.PLL_Init)
-    ST7735_DrawChar                          0x000009e5   Thumb Code   256  st7735.o(i.ST7735_DrawChar)
-    ST7735_DrawCharS                         0x00000af1   Thumb Code   232  st7735.o(i.ST7735_DrawCharS)
-    ST7735_DrawPixel                         0x00000be5   Thumb Code    68  st7735.o(i.ST7735_DrawPixel)
-    ST7735_DrawString                        0x00000c31   Thumb Code    84  st7735.o(i.ST7735_DrawString)
-    ST7735_FillRect                          0x00000c85   Thumb Code   164  st7735.o(i.ST7735_FillRect)
-    ST7735_FillScreen                        0x00000d31   Thumb Code    28  st7735.o(i.ST7735_FillScreen)
-    ST7735_InitR                             0x00000d55   Thumb Code    90  st7735.o(i.ST7735_InitR)
-    ST7735_SetCursor                         0x00000dd1   Thumb Code    22  st7735.o(i.ST7735_SetCursor)
-    Sound_Init                               0x00000df1   Thumb Code   242  sound.o(i.Sound_Init)
-    Sound_Off                                0x00000f19   Thumb Code    14  sound.o(i.Sound_Off)
-    Sound_On                                 0x00000f2d   Thumb Code    16  sound.o(i.Sound_On)
-    Sound_Test                               0x00000f41   Thumb Code    24  sound.o(i.Sound_Test)
-    Switch_Init                              0x00000f59   Thumb Code   160  switch.o(i.Switch_Init)
-    SysTick_Handler                          0x00001011   Thumb Code     8  sound.o(i.SysTick_Handler)
-    Timer0A_Handler                          0x00001019   Thumb Code    26  switch.o(i.Timer0A_Handler)
-    Timer1A_Handler                          0x00001099   Thumb Code    18  co2sensor.o(i.Timer1A_Handler)
-    Timer2A_Handler                          0x000010b5   Thumb Code    44  sound.o(i.Timer2A_Handler)
-    drawCO2LevelSection                      0x000012cd   Thumb Code   224  lcd.o(i.drawCO2LevelSection)
-    drawHardLimitSection                     0x000013bd   Thumb Code   130  lcd.o(i.drawHardLimitSection)
-    drawProducingO2Section                   0x0000144d   Thumb Code    28  lcd.o(i.drawProducingO2Section)
-    drawSoftLimitSection                     0x0000147d   Thumb Code   130  lcd.o(i.drawSoftLimitSection)
-    getADCVal                                0x0000150d   Thumb Code    36  co2sensor.o(i.getADCVal)
-    initECSModules                           0x00001539   Thumb Code    36  ecsmain.o(i.initECSModules)
-    initECSState                             0x0000155d   Thumb Code    44  ecsmain.o(i.initECSState)
-    initPortAndADC                           0x000015a5   Thumb Code   234  co2sensor.o(i.initPortAndADC)
-    initTimer1A                              0x000016b5   Thumb Code    92  co2sensor.o(i.initTimer1A)
-    main                                     0x00001725   Thumb Code    66  ecsmain.o(i.main)
-    mainTest                                 0x00001779   Thumb Code    66  ecsmain.o(i.mainTest)
-    playSound                                0x000017c1   Thumb Code    52  sound.o(i.playSound)
-    soundOut                                 0x00001885   Thumb Code    34  sound.o(i.soundOut)
-    testHelperOverrideVars                   0x000018b1   Thumb Code    32  ecsmain.o(i.testHelperOverrideVars)
-    testStates                               0x000018e1   Thumb Code   110  ecsmain.o(i.testStates)
-    updateECS                                0x000019fd   Thumb Code   106  ecsmain.o(i.updateECS)
-    updateECSState                           0x00001a8d   Thumb Code    60  ecsmain.o(i.updateECSState)
-    updateECSSystem                          0x00001ae5   Thumb Code    32  ecsmain.o(i.updateECSSystem)
-    updateElectrolysis                       0x00001b05   Thumb Code    24  ecsmain.o(i.updateElectrolysis)
-    updateLED                                0x00001b21   Thumb Code    50  ecsmain.o(i.updateLED)
-    updatePrevValues                         0x00001b59   Thumb Code    46  ecsmain.o(i.updatePrevValues)
-    updateSound                              0x00001bb5   Thumb Code    24  ecsmain.o(i.updateSound)
-    ECSStateNoLimitPassed                    0x00001c28   Data           3  ecsmain.o(.constdata)
-    ECSStateSoftLimitPassed                  0x00001c2b   Data           3  ecsmain.o(.constdata)
-    ECSStateHardLimitPassed                  0x00001c2e   Data           3  ecsmain.o(.constdata)
-    testStatesCasesSize                      0x00001c34   Data           4  ecsmain.o(.constdata)
-    testStatesCases                          0x00001c38   Data         180  ecsmain.o(.constdata)
-    dBfs                                     0x000022ce   Data         512  st7735.o(.constdata)
-    Region$$Table$$Base                      0x000024d0   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x000024f0   Number         0  anon$$obj.o(Region$$Table)
+    CO2Sensor_ADCToPercCO2                   0x00000629   Thumb Code    46  co2sensor.o(i.CO2Sensor_ADCToPercCO2)
+    CO2Sensor_Init                           0x00000657   Thumb Code    12  co2sensor.o(i.CO2Sensor_Init)
+    CO2Sensor_Test                           0x00000663   Thumb Code    16  co2sensor.o(i.CO2Sensor_Test)
+    Delay1ms                                 0x00000673   Thumb Code    32  st7735.o(i.Delay1ms)
+    Electrolysis_Init                        0x00000695   Thumb Code   108  electrolysis.o(i.Electrolysis_Init)
+    Electrolysis_Off                         0x00000715   Thumb Code    16  electrolysis.o(i.Electrolysis_Off)
+    Electrolysis_On                          0x0000072d   Thumb Code    16  electrolysis.o(i.Electrolysis_On)
+    Electrolysis_Test                        0x00000745   Thumb Code    24  electrolysis.o(i.Electrolysis_Test)
+    GPIOPortB_Handler                        0x000007a1   Thumb Code    40  switch.o(i.GPIOPortB_Handler)
+    LCD_Init                                 0x000007d1   Thumb Code    10  lcd.o(i.LCD_Init)
+    LCD_Test                                 0x000007dd   Thumb Code    24  lcd.o(i.LCD_Test)
+    LCD_Update                               0x00000801   Thumb Code    86  lcd.o(i.LCD_Update)
+    LED_GreenOn                              0x00000871   Thumb Code    30  led.o(i.LED_GreenOn)
+    LED_Init                                 0x00000899   Thumb Code   104  led.o(i.LED_Init)
+    LED_RedOn                                0x00000915   Thumb Code    30  led.o(i.LED_RedOn)
+    LED_Test                                 0x0000093d   Thumb Code    32  led.o(i.LED_Test)
+    LED_YellowOn                             0x0000095d   Thumb Code    30  led.o(i.LED_YellowOn)
+    PLL_Init                                 0x00000985   Thumb Code   118  pll.o(i.PLL_Init)
+    ST7735_DrawChar                          0x00000a01   Thumb Code   256  st7735.o(i.ST7735_DrawChar)
+    ST7735_DrawCharS                         0x00000b0d   Thumb Code   232  st7735.o(i.ST7735_DrawCharS)
+    ST7735_DrawPixel                         0x00000c01   Thumb Code    68  st7735.o(i.ST7735_DrawPixel)
+    ST7735_DrawString                        0x00000c4d   Thumb Code    84  st7735.o(i.ST7735_DrawString)
+    ST7735_FillRect                          0x00000ca1   Thumb Code   164  st7735.o(i.ST7735_FillRect)
+    ST7735_FillScreen                        0x00000d4d   Thumb Code    28  st7735.o(i.ST7735_FillScreen)
+    ST7735_InitR                             0x00000d71   Thumb Code    90  st7735.o(i.ST7735_InitR)
+    ST7735_SetCursor                         0x00000ded   Thumb Code    22  st7735.o(i.ST7735_SetCursor)
+    Sound_Init                               0x00000e0d   Thumb Code   242  sound.o(i.Sound_Init)
+    Sound_Off                                0x00000f35   Thumb Code    14  sound.o(i.Sound_Off)
+    Sound_On                                 0x00000f49   Thumb Code    16  sound.o(i.Sound_On)
+    Sound_Test                               0x00000f5d   Thumb Code    24  sound.o(i.Sound_Test)
+    Switch_Init                              0x00000f75   Thumb Code   160  switch.o(i.Switch_Init)
+    SysTick_Handler                          0x0000102d   Thumb Code     8  sound.o(i.SysTick_Handler)
+    Timer0A_Handler                          0x00001035   Thumb Code    26  switch.o(i.Timer0A_Handler)
+    Timer1A_Handler                          0x000010b5   Thumb Code    18  co2sensor.o(i.Timer1A_Handler)
+    Timer2A_Handler                          0x000010d1   Thumb Code    44  sound.o(i.Timer2A_Handler)
+    drawCO2LevelSection                      0x000012e9   Thumb Code   224  lcd.o(i.drawCO2LevelSection)
+    drawHardLimitSection                     0x000013d9   Thumb Code   130  lcd.o(i.drawHardLimitSection)
+    drawProducingO2Section                   0x00001469   Thumb Code    44  lcd.o(i.drawProducingO2Section)
+    drawSoftLimitSection                     0x000014b9   Thumb Code   130  lcd.o(i.drawSoftLimitSection)
+    getADCVal                                0x00001549   Thumb Code    36  co2sensor.o(i.getADCVal)
+    initECSModules                           0x00001575   Thumb Code    36  ecsmain.o(i.initECSModules)
+    initECSState                             0x00001599   Thumb Code    44  ecsmain.o(i.initECSState)
+    initPortAndADC                           0x000015e1   Thumb Code   234  co2sensor.o(i.initPortAndADC)
+    initTimer1A                              0x000016f1   Thumb Code    92  co2sensor.o(i.initTimer1A)
+    main                                     0x00001761   Thumb Code    66  ecsmain.o(i.main)
+    mainTest                                 0x000017b5   Thumb Code    66  ecsmain.o(i.mainTest)
+    playSound                                0x000017fd   Thumb Code    52  sound.o(i.playSound)
+    soundOut                                 0x000018c1   Thumb Code    34  sound.o(i.soundOut)
+    testHelperOverrideVars                   0x000018ed   Thumb Code    32  ecsmain.o(i.testHelperOverrideVars)
+    testStates                               0x0000191d   Thumb Code   110  ecsmain.o(i.testStates)
+    updateECS                                0x00001a39   Thumb Code   106  ecsmain.o(i.updateECS)
+    updateECSState                           0x00001ac9   Thumb Code    60  ecsmain.o(i.updateECSState)
+    updateECSSystem                          0x00001b21   Thumb Code    32  ecsmain.o(i.updateECSSystem)
+    updateElectrolysis                       0x00001b41   Thumb Code    24  ecsmain.o(i.updateElectrolysis)
+    updateLED                                0x00001b5d   Thumb Code    50  ecsmain.o(i.updateLED)
+    updatePrevValues                         0x00001b95   Thumb Code    46  ecsmain.o(i.updatePrevValues)
+    updateSound                              0x00001bf1   Thumb Code    24  ecsmain.o(i.updateSound)
+    ECSStateNoLimitPassed                    0x00001c64   Data           3  ecsmain.o(.constdata)
+    ECSStateSoftLimitPassed                  0x00001c67   Data           3  ecsmain.o(.constdata)
+    ECSStateHardLimitPassed                  0x00001c6a   Data           3  ecsmain.o(.constdata)
+    testStatesCasesSize                      0x00001c70   Data           4  ecsmain.o(.constdata)
+    testStatesCases                          0x00001c74   Data         180  ecsmain.o(.constdata)
+    dBfs                                     0x0000230a   Data         512  st7735.o(.constdata)
+    Region$$Table$$Base                      0x0000250c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x0000252c   Number         0  anon$$obj.o(Region$$Table)
     TestMode                                 0x20000010   Data           1  ecsmain.o(.data)
     ECSMain_EditMode                         0x20000011   Data           1  ecsmain.o(.data)
     ECSMain_State                            0x20000014   Data           4  ecsmain.o(.data)
@@ -945,9 +945,9 @@ Memory Map of the image
 
   Image Entry point : 0x0000026d
 
-  Load Region LR_1 (Base: 0x00000000, Size: 0x0000255c, Max: 0xffffffff, ABSOLUTE)
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00002598, Max: 0xffffffff, ABSOLUTE)
 
-    Execution Region ER_RO (Base: 0x00000000, Size: 0x000024f0, Max: 0xffffffff, ABSOLUTE)
+    Execution Region ER_RO (Base: 0x00000000, Size: 0x0000252c, Max: 0xffffffff, ABSOLUTE)
 
     Base Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -1016,84 +1016,85 @@ Memory Map of the image
     0x0000051c   0x00000032   Code   RO          768    .text               c_w.l(defsig_general.o)
     0x0000054e   0x00000002   PAD
     0x00000550   0x000000d8   Code   RO           99    i.ButtonPressed     switch.o
-    0x00000628   0x00000014   Code   RO          324    i.CO2Sensor_ADCToPercCO2  co2sensor.o
-    0x0000063c   0x0000000c   Code   RO          325    i.CO2Sensor_Init    co2sensor.o
-    0x00000648   0x00000010   Code   RO          326    i.CO2Sensor_Test    co2sensor.o
-    0x00000658   0x00000020   Code   RO          431    i.Delay1ms          st7735.o
-    0x00000678   0x00000080   Code   RO          289    i.Electrolysis_Init  electrolysis.o
-    0x000006f8   0x00000018   Code   RO          290    i.Electrolysis_Off  electrolysis.o
-    0x00000710   0x00000018   Code   RO          291    i.Electrolysis_On   electrolysis.o
-    0x00000728   0x00000018   Code   RO          292    i.Electrolysis_Test  electrolysis.o
-    0x00000740   0x00000044   Code   RO          100    i.GPIOPortBArm      switch.o
-    0x00000784   0x00000030   Code   RO          101    i.GPIOPortB_Handler  switch.o
-    0x000007b4   0x0000000a   Code   RO          377    i.LCD_Init          lcd.o
-    0x000007be   0x00000002   PAD
-    0x000007c0   0x00000024   Code   RO          378    i.LCD_Test          lcd.o
-    0x000007e4   0x00000070   Code   RO          379    i.LCD_Update        lcd.o
-    0x00000854   0x00000028   Code   RO          248    i.LED_GreenOn       led.o
-    0x0000087c   0x0000007c   Code   RO          249    i.LED_Init          led.o
-    0x000008f8   0x00000028   Code   RO          250    i.LED_RedOn         led.o
-    0x00000920   0x00000020   Code   RO          251    i.LED_Test          led.o
-    0x00000940   0x00000028   Code   RO          252    i.LED_YellowOn      led.o
-    0x00000968   0x0000007c   Code   RO           12    i.PLL_Init          pll.o
-    0x000009e4   0x0000010c   Code   RO          439    i.ST7735_DrawChar   st7735.o
-    0x00000af0   0x000000f4   Code   RO          440    i.ST7735_DrawCharS  st7735.o
-    0x00000be4   0x0000004c   Code   RO          443    i.ST7735_DrawPixel  st7735.o
-    0x00000c30   0x00000054   Code   RO          444    i.ST7735_DrawString  st7735.o
-    0x00000c84   0x000000ac   Code   RO          445    i.ST7735_FillRect   st7735.o
-    0x00000d30   0x00000024   Code   RO          446    i.ST7735_FillScreen  st7735.o
-    0x00000d54   0x0000007c   Code   RO          448    i.ST7735_InitR      st7735.o
-    0x00000dd0   0x00000020   Code   RO          461    i.ST7735_SetCursor  st7735.o
-    0x00000df0   0x00000128   Code   RO           34    i.Sound_Init        sound.o
-    0x00000f18   0x00000014   Code   RO           35    i.Sound_Off         sound.o
-    0x00000f2c   0x00000014   Code   RO           36    i.Sound_On          sound.o
-    0x00000f40   0x00000018   Code   RO           37    i.Sound_Test        sound.o
-    0x00000f58   0x000000b8   Code   RO          102    i.Switch_Init       switch.o
-    0x00001010   0x00000008   Code   RO           38    i.SysTick_Handler   sound.o
-    0x00001018   0x00000028   Code   RO          103    i.Timer0A_Handler   switch.o
-    0x00001040   0x00000058   Code   RO          104    i.Timer0Arm         switch.o
-    0x00001098   0x0000001c   Code   RO          327    i.Timer1A_Handler   co2sensor.o
-    0x000010b4   0x0000003c   Code   RO           39    i.Timer2A_Handler   sound.o
-    0x000010f0   0x00000056   Code   RO          465    i.commandList       st7735.o
-    0x00001146   0x00000002   PAD
-    0x00001148   0x00000184   Code   RO          466    i.commonInit        st7735.o
-    0x000012cc   0x000000f0   Code   RO          380    i.drawCO2LevelSection  lcd.o
-    0x000013bc   0x00000090   Code   RO          381    i.drawHardLimitSection  lcd.o
-    0x0000144c   0x00000030   Code   RO          382    i.drawProducingO2Section  lcd.o
-    0x0000147c   0x00000090   Code   RO          383    i.drawSoftLimitSection  lcd.o
-    0x0000150c   0x0000002c   Code   RO          328    i.getADCVal         co2sensor.o
-    0x00001538   0x00000024   Code   RO          147    i.initECSModules    ecsmain.o
-    0x0000155c   0x00000048   Code   RO          148    i.initECSState      ecsmain.o
-    0x000015a4   0x00000110   Code   RO          329    i.initPortAndADC    co2sensor.o
-    0x000016b4   0x00000070   Code   RO          330    i.initTimer1A       co2sensor.o
-    0x00001724   0x00000054   Code   RO          149    i.main              ecsmain.o
-    0x00001778   0x00000048   Code   RO          150    i.mainTest          ecsmain.o
-    0x000017c0   0x0000003c   Code   RO           40    i.playSound         sound.o
-    0x000017fc   0x00000012   Code   RO          471    i.pushColor         st7735.o
-    0x0000180e   0x00000002   PAD
-    0x00001810   0x00000074   Code   RO          472    i.setAddrWindow     st7735.o
-    0x00001884   0x0000002c   Code   RO           41    i.soundOut          sound.o
-    0x000018b0   0x00000030   Code   RO          151    i.testHelperOverrideVars  ecsmain.o
-    0x000018e0   0x000000b8   Code   RO          152    i.testStates        ecsmain.o
-    0x00001998   0x00000014   Code   RO           42    i.testWait          sound.o
-    0x000019ac   0x00000014   Code   RO          153    i.testWait          ecsmain.o
-    0x000019c0   0x00000014   Code   RO          253    i.testWait          led.o
-    0x000019d4   0x00000014   Code   RO          293    i.testWait          electrolysis.o
-    0x000019e8   0x00000014   Code   RO          331    i.testWait          co2sensor.o
-    0x000019fc   0x00000090   Code   RO          154    i.updateECS         ecsmain.o
-    0x00001a8c   0x00000058   Code   RO          155    i.updateECSState    ecsmain.o
-    0x00001ae4   0x00000020   Code   RO          156    i.updateECSSystem   ecsmain.o
-    0x00001b04   0x0000001c   Code   RO          157    i.updateElectrolysis  ecsmain.o
-    0x00001b20   0x00000038   Code   RO          158    i.updateLED         ecsmain.o
-    0x00001b58   0x0000005c   Code   RO          159    i.updatePrevValues  ecsmain.o
-    0x00001bb4   0x0000001c   Code   RO          160    i.updateSound       ecsmain.o
-    0x00001bd0   0x00000030   Code   RO          473    i.writecommand      st7735.o
-    0x00001c00   0x00000020   Code   RO          474    i.writedata         st7735.o
-    0x00001c20   0x00000008   Data   RO           43    .constdata          sound.o
-    0x00001c28   0x000000c4   Data   RO          161    .constdata          ecsmain.o
-    0x00001cec   0x000007e2   Data   RO          476    .constdata          st7735.o
-    0x000024ce   0x00000002   PAD
-    0x000024d0   0x00000020   Data   RO          872    Region$$Table       anon$$obj.o
+    0x00000628   0x0000002e   Code   RO          324    i.CO2Sensor_ADCToPercCO2  co2sensor.o
+    0x00000656   0x0000000c   Code   RO          325    i.CO2Sensor_Init    co2sensor.o
+    0x00000662   0x00000010   Code   RO          326    i.CO2Sensor_Test    co2sensor.o
+    0x00000672   0x00000020   Code   RO          431    i.Delay1ms          st7735.o
+    0x00000692   0x00000002   PAD
+    0x00000694   0x00000080   Code   RO          289    i.Electrolysis_Init  electrolysis.o
+    0x00000714   0x00000018   Code   RO          290    i.Electrolysis_Off  electrolysis.o
+    0x0000072c   0x00000018   Code   RO          291    i.Electrolysis_On   electrolysis.o
+    0x00000744   0x00000018   Code   RO          292    i.Electrolysis_Test  electrolysis.o
+    0x0000075c   0x00000044   Code   RO          100    i.GPIOPortBArm      switch.o
+    0x000007a0   0x00000030   Code   RO          101    i.GPIOPortB_Handler  switch.o
+    0x000007d0   0x0000000a   Code   RO          377    i.LCD_Init          lcd.o
+    0x000007da   0x00000002   PAD
+    0x000007dc   0x00000024   Code   RO          378    i.LCD_Test          lcd.o
+    0x00000800   0x00000070   Code   RO          379    i.LCD_Update        lcd.o
+    0x00000870   0x00000028   Code   RO          248    i.LED_GreenOn       led.o
+    0x00000898   0x0000007c   Code   RO          249    i.LED_Init          led.o
+    0x00000914   0x00000028   Code   RO          250    i.LED_RedOn         led.o
+    0x0000093c   0x00000020   Code   RO          251    i.LED_Test          led.o
+    0x0000095c   0x00000028   Code   RO          252    i.LED_YellowOn      led.o
+    0x00000984   0x0000007c   Code   RO           12    i.PLL_Init          pll.o
+    0x00000a00   0x0000010c   Code   RO          439    i.ST7735_DrawChar   st7735.o
+    0x00000b0c   0x000000f4   Code   RO          440    i.ST7735_DrawCharS  st7735.o
+    0x00000c00   0x0000004c   Code   RO          443    i.ST7735_DrawPixel  st7735.o
+    0x00000c4c   0x00000054   Code   RO          444    i.ST7735_DrawString  st7735.o
+    0x00000ca0   0x000000ac   Code   RO          445    i.ST7735_FillRect   st7735.o
+    0x00000d4c   0x00000024   Code   RO          446    i.ST7735_FillScreen  st7735.o
+    0x00000d70   0x0000007c   Code   RO          448    i.ST7735_InitR      st7735.o
+    0x00000dec   0x00000020   Code   RO          461    i.ST7735_SetCursor  st7735.o
+    0x00000e0c   0x00000128   Code   RO           34    i.Sound_Init        sound.o
+    0x00000f34   0x00000014   Code   RO           35    i.Sound_Off         sound.o
+    0x00000f48   0x00000014   Code   RO           36    i.Sound_On          sound.o
+    0x00000f5c   0x00000018   Code   RO           37    i.Sound_Test        sound.o
+    0x00000f74   0x000000b8   Code   RO          102    i.Switch_Init       switch.o
+    0x0000102c   0x00000008   Code   RO           38    i.SysTick_Handler   sound.o
+    0x00001034   0x00000028   Code   RO          103    i.Timer0A_Handler   switch.o
+    0x0000105c   0x00000058   Code   RO          104    i.Timer0Arm         switch.o
+    0x000010b4   0x0000001c   Code   RO          327    i.Timer1A_Handler   co2sensor.o
+    0x000010d0   0x0000003c   Code   RO           39    i.Timer2A_Handler   sound.o
+    0x0000110c   0x00000056   Code   RO          465    i.commandList       st7735.o
+    0x00001162   0x00000002   PAD
+    0x00001164   0x00000184   Code   RO          466    i.commonInit        st7735.o
+    0x000012e8   0x000000f0   Code   RO          380    i.drawCO2LevelSection  lcd.o
+    0x000013d8   0x00000090   Code   RO          381    i.drawHardLimitSection  lcd.o
+    0x00001468   0x00000050   Code   RO          382    i.drawProducingO2Section  lcd.o
+    0x000014b8   0x00000090   Code   RO          383    i.drawSoftLimitSection  lcd.o
+    0x00001548   0x0000002c   Code   RO          328    i.getADCVal         co2sensor.o
+    0x00001574   0x00000024   Code   RO          147    i.initECSModules    ecsmain.o
+    0x00001598   0x00000048   Code   RO          148    i.initECSState      ecsmain.o
+    0x000015e0   0x00000110   Code   RO          329    i.initPortAndADC    co2sensor.o
+    0x000016f0   0x00000070   Code   RO          330    i.initTimer1A       co2sensor.o
+    0x00001760   0x00000054   Code   RO          149    i.main              ecsmain.o
+    0x000017b4   0x00000048   Code   RO          150    i.mainTest          ecsmain.o
+    0x000017fc   0x0000003c   Code   RO           40    i.playSound         sound.o
+    0x00001838   0x00000012   Code   RO          471    i.pushColor         st7735.o
+    0x0000184a   0x00000002   PAD
+    0x0000184c   0x00000074   Code   RO          472    i.setAddrWindow     st7735.o
+    0x000018c0   0x0000002c   Code   RO           41    i.soundOut          sound.o
+    0x000018ec   0x00000030   Code   RO          151    i.testHelperOverrideVars  ecsmain.o
+    0x0000191c   0x000000b8   Code   RO          152    i.testStates        ecsmain.o
+    0x000019d4   0x00000014   Code   RO           42    i.testWait          sound.o
+    0x000019e8   0x00000014   Code   RO          153    i.testWait          ecsmain.o
+    0x000019fc   0x00000014   Code   RO          253    i.testWait          led.o
+    0x00001a10   0x00000014   Code   RO          293    i.testWait          electrolysis.o
+    0x00001a24   0x00000014   Code   RO          331    i.testWait          co2sensor.o
+    0x00001a38   0x00000090   Code   RO          154    i.updateECS         ecsmain.o
+    0x00001ac8   0x00000058   Code   RO          155    i.updateECSState    ecsmain.o
+    0x00001b20   0x00000020   Code   RO          156    i.updateECSSystem   ecsmain.o
+    0x00001b40   0x0000001c   Code   RO          157    i.updateElectrolysis  ecsmain.o
+    0x00001b5c   0x00000038   Code   RO          158    i.updateLED         ecsmain.o
+    0x00001b94   0x0000005c   Code   RO          159    i.updatePrevValues  ecsmain.o
+    0x00001bf0   0x0000001c   Code   RO          160    i.updateSound       ecsmain.o
+    0x00001c0c   0x00000030   Code   RO          473    i.writecommand      st7735.o
+    0x00001c3c   0x00000020   Code   RO          474    i.writedata         st7735.o
+    0x00001c5c   0x00000008   Data   RO           43    .constdata          sound.o
+    0x00001c64   0x000000c4   Data   RO          161    .constdata          ecsmain.o
+    0x00001d28   0x000007e2   Data   RO          476    .constdata          st7735.o
+    0x0000250a   0x00000002   PAD
+    0x0000250c   0x00000020   Data   RO          872    Region$$Table       anon$$obj.o
 
 
     Execution Region ER_RW (Base: 0x20000000, Size: 0x0000006c, Max: 0xffffffff, ABSOLUTE)
@@ -1123,10 +1124,10 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-       524         82          0          0          0       3372   co2sensor.o
+       550         82          0          0          0       3452   co2sensor.o
        984        282        196         48          0       8573   ecsmain.o
        220         42          0          0          0       2001   electrolysis.o
-       734        102          0          0          0       3964   lcd.o
+       766        118          0          0          0       3972   lcd.o
        296         56          0          0          0       2231   led.o
        124          6          0          0          0       4643   pll.o
        552        104          8         12          0       4064   sound.o
@@ -1135,9 +1136,9 @@ Image component sizes
        644         90          0          4          0       2652   switch.o
 
     ----------------------------------------------------------------------
-      6532       1562       2256        108       1024      44472   Object Totals
+      6592       1578       2256        108       1024      44560   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-         6          0          2          0          0          0   (incl. Padding)
+         8          0          2          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -1193,15 +1194,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      7200       1652       2256        108       1124      41424   Grand Totals
-      7200       1652       2256        108       1124      41424   ELF Image Totals
-      7200       1652       2256        108          0          0   ROM Totals
+      7260       1668       2256        108       1124      41512   Grand Totals
+      7260       1668       2256        108       1124      41512   ELF Image Totals
+      7260       1668       2256        108          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                 9456 (   9.23kB)
+    Total RO  Size (Code + RO Data)                 9516 (   9.29kB)
     Total RW  Size (RW Data + ZI Data)              1232 (   1.20kB)
-    Total ROM Size (Code + RO Data + RW Data)       9564 (   9.34kB)
+    Total ROM Size (Code + RO Data + RW Data)       9624 (   9.40kB)
 
 ==============================================================================
 

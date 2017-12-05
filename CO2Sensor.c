@@ -19,6 +19,10 @@
 #include "ECSMain.h"
 
 #define ADC_AVGING 6
+#define SENSOR_OFFSET 280
+#define SENSOR_MAX 999
+#define SENSOR_MIN 0
+
 
 /**************CO2Sensor_Init***************
  Description: Inits PE5, ADC0, and Timer1A.
@@ -31,21 +35,22 @@ void CO2Sensor_Init() {
 }
 
 /**************CO2Sensor_Init***************
- Description: Converts ADC value to % CO2.
+ Description: Converts ADC value to % CO2. Used 2 calibration points, air ~0%
+		and exhaled air ~5%. Voltage scales linearly and with appropriate slope,
+		but ~0 CO2 (Austin air) has voltage ~1555, so using offset for calibration.
  Inputs: none
- Outputs: Int between 0 and 999 representing 0.00% to 9.99% CO2 in the air.
+ Outputs: Int between 0 and 999 representing 00.0% to 99.9% CO2 in the air.
 */
-int CO2Sensor_ADCToPercCO2(int adcVal) {
-  // TODO: Calibrate
-  
-  // .04 = 17.7% inside
-  // 20 outside, humid
-  
-  //x  x = 437
-  // 717 / x * 100 = .04%
-  // x = 1792500
-  
-  return adcVal * 1000 / 4096;
+int CO2Sensor_ADCToPercCO2(int adcVal) {  
+	int perc = adcVal * 1000 / 4096 - SENSOR_OFFSET;
+
+	if (perc > SENSOR_MAX) {
+		return SENSOR_MAX;
+	} else if (perc < SENSOR_MIN) {
+		return SENSOR_MIN;
+	}
+	
+	return perc;
 }
 
 // PRIVATE FUNCTIONS
@@ -93,7 +98,7 @@ void initTimer1A() {
   TIMER1_CTL_R = 0; // Disable TIMER1A during setup
   TIMER1_CFG_R = 0; // Configure for 32-bit mode
   TIMER1_TAMR_R = 0x2; // Configure for periodic mode, default down-count settings
-  TIMER1_TAILR_R = 4000000-1; // Reload value (50ms)
+  TIMER1_TAILR_R = 8000000-1; // Reload value (100ms)
   TIMER1_TAPR_R = 0; // Bus clock resolution
   TIMER1_ICR_R = 0x1; // Clear TIMER1A timeout flag
   TIMER1_IMR_R = 0x1; // Arm timeout interrupt

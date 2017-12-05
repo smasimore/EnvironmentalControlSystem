@@ -40,7 +40,7 @@ void Electrolysis_Init() {
  Outputs: none
 */
 void Electrolysis_On() {
-  GPIO_PORTF_DATA_R |= 0x4;
+	GPIO_PORTF_DATA_R &= ~0x4;
 }
 
 /**************Electrolysis_Off***************
@@ -49,7 +49,7 @@ void Electrolysis_On() {
  Outputs: none
 */
 void Electrolysis_Off() {
-  GPIO_PORTF_DATA_R &= ~0x4;
+  GPIO_PORTF_DATA_R |= 0x4;
 }
 
 // TEST FUNCTIONS
