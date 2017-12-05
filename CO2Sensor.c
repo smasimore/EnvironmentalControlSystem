@@ -36,21 +36,21 @@ void CO2Sensor_Init() {
 
 /**************CO2Sensor_Init***************
  Description: Converts ADC value to % CO2. Used 2 calibration points, air ~0%
-		and exhaled air ~5%. Voltage scales linearly and with appropriate slope,
-		but ~0 CO2 (Austin air) has voltage ~1555, so using offset for calibration.
+    and exhaled air ~5%. Voltage scales linearly and with appropriate slope,
+    but ~0 CO2 (Austin air) has voltage ~1555, so using offset for calibration.
  Inputs: none
  Outputs: Int between 0 and 999 representing 00.0% to 99.9% CO2 in the air.
 */
 int CO2Sensor_ADCToPercCO2(int adcVal) {  
-	int perc = adcVal * 1000 / 4096 - SENSOR_OFFSET;
+  int perc = adcVal * 1000 / 4096 - SENSOR_OFFSET;
 
-	if (perc > SENSOR_MAX) {
-		return SENSOR_MAX;
-	} else if (perc < SENSOR_MIN) {
-		return SENSOR_MIN;
-	}
-	
-	return perc;
+  if (perc > SENSOR_MAX) {
+    return SENSOR_MAX;
+  } else if (perc < SENSOR_MIN) {
+    return SENSOR_MIN;
+  }
+  
+  return perc;
 }
 
 // PRIVATE FUNCTIONS

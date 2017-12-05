@@ -147,8 +147,8 @@ void drawProducingO2Section() {
   if (ECSMain_State->electrolysis == ELEC_ON) {
     ST7735_DrawString(2, 4, (uint8_t *)"Producing O2...", DefaultColor);
   } else {
-		ST7735_DrawString(2, 4, (uint8_t *)"               ", DefaultColor);
-	}
+    ST7735_DrawString(2, 4, (uint8_t *)"               ", DefaultColor);
+  }
 }
 
 // TEST FUNCTION
