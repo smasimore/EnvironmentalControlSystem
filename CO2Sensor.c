@@ -19,7 +19,7 @@
 #include "ECSMain.h"
 
 #define ADC_AVGING 6
-#define SENSOR_OFFSET 280
+#define SENSOR_OFFSET 230
 #define SENSOR_MAX 999
 #define SENSOR_MIN 0
 
