@@ -44,5 +44,3 @@ int getADCVal(void);
  Outputs: none
 */
 void CO2Sensor_Test(void);
-
-static void testWait(void);

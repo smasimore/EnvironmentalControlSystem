@@ -17,6 +17,9 @@
 #include "inc/tm4c123gh6pm.h"
 #include "LED.h"
 
+// PRIVATE FUNCTIONS
+static void testWait(void);
+
 /**************LED_Init***************
  Description: Inits PF1 (green), PF3 (yellow), and PF4 (red).
  Inputs: none

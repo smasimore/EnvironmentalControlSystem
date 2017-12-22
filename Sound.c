@@ -26,6 +26,12 @@ static uint32_t Count = 0;
 static uint32_t SpeakerData = 1;
 static const uint32_t Notes[2]={E1,0}; // Only play one note for alarm.
 
+void SysTick_Handler(void);
+void Timer2_Handler(void);
+void playSound(void);
+void soundOut(uint32_t data);
+static void testWait(void);
+
 /**************Sound_Init***************
  Description: Initializes sound module, including PF0 for output to speaker,
     SysTick for sending output to PF0 at specified frequencies, and Timer2 

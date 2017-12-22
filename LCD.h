@@ -41,13 +41,6 @@ void LCD_Init(void);
 */
 void LCD_Update(int softLimit, int hardLimit, int co2Val);
 
-// PRIVATE FUNCTIONS
-
-void drawSoftLimitSection(int16_t color, int softLimit);
-void drawHardLimitSection(int16_t color, int hardLimit);
-void drawCO2LevelSection(int co2Val);
-void drawProducingO2Section(void);
-
 // TEST FUNCTIONS
 
 /**************LCD_Test***************

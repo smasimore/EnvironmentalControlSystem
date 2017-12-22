@@ -38,33 +38,3 @@ extern int ECSMain_PrevCO2Val;
 extern int ECSMain_PrevSoftLimit;
 extern int ECSMain_PrevHardLimit;
 extern int ECSMain_PrevEditMode;
-
-// PRIVATE FUNCTIONS
-
-void initECSState(void);
-void initECSModules(void);
-
-void updateECS(void);
-void updatePrevValues(int currCO2ADCVal);
-void updateECSState(int softLimit, int hardLimit);
-void updateECSSystem(int softLimit, int hardLimit, int co2Val);
-void updateElectrolysis(void);
-void updateLED(void);
-void updateSound(void);
-
-void DisableInterrupts(void);
-void EnableInterrupts(void);
-
-// TEST TYPES AND FUNCTIONS
-typedef struct TestVars_t {
-  int softLimit;
-  int hardLimit;
-  EditMode_t editMode;
-  int co2Val;
-  const ECSState_t * expectedState;
-} TestVars_t;
-
-void mainTest(void);
-void testStates(void);
-void testHelperOverrideVars(TestVars_t testVars);
-static void testWait(void);

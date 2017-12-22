@@ -13,7 +13,7 @@ compiling PLL.c...
 compiling Sound.c...
 compiling Switch.c...
 compiling ECSMain.c...
-ECSMain.c(95): warning:  #111-D: statement is unreachable
+ECSMain.c(123): warning:  #111-D: statement is unreachable
     return 0;
 ECSMain.c: 1 warning, 0 errors
 compiling LED.c...
@@ -24,11 +24,99 @@ compiling ST7735.c...
 linking...
 Program Size: Code=7260 RO-data=2256 RW-data=108 ZI-data=1124  
 ".\ECS.axf" - 0 Error(s), 1 Warning(s).
-Load "C:\\Users\\Sarah\\Documents\\Fall_2017\\EE445L\\EnvironmentalControlSystem\\ECS.axf" 
-Connecting: Mode=JTAG, Speed=1000000Hz
-Erase Done.
-Programming Done.
-Verify OK.
 </pre>
 </body>
 </html>
+laration is incompatible with previous "ButtonPressed" (declared at line 91)
+  void ButtonPressed(){
+Switch.c: 2 warnings, 2 errors
+compiling ECSMain.c...
+ECSMain.c(95): warning:  #111-D: statement is unreachable
+    return 0;
+ECSMain.c: 1 warning, 0 errors
+compiling LED.c...
+compiling Electrolysis.c...
+compiling CO2Sensor.c...
+compiling LCD.c...
+compiling ST7735.c...
+".\ECS.axf" - 2 Error(s), 3 Warning(s).
+Target not created
+ced
+  static void testWait() {
+Sound.c: 5 warnings, 3 errors
+compiling Switch.c...
+Switch.c(40): warning:  #223-D: function "GPIOPortBArm" declared implicitly
+    GPIOPortBArm();
+Switch.c(53): error:  #159: declaration is incompatible with previous "GPIOPortBArm" (declared at line 40)
+  static void GPIOPortBArm(){
+Switch.c(91): warning:  #223-D: function "ButtonPressed" declared implicitly
+      ButtonPressed();  // execute user task
+Switch.c(114): error:  #159: declaration is incompatible with previous "ButtonPressed" (declared at line 91)
+  void ButtonPressed(){
+Switch.c: 2 warnings, 2 errors
+compiling ECSMain.c...
+ECSMain.c(95): warning:  #111-D: statement is unreachable
+    return 0;
+ECSMain.c: 1 warning, 0 errors
+compiling LED.c...
+compiling Electrolysis.c...
+compiling CO2Sensor.c...
+compiling LCD.c...
+compiling ST7735.c...
+".\ECS.axf" - 5 Error(s), 8 Warning(s).
+Target not created
+ updateECSState(ECSMain_SoftLimit, ECSMain_HardLimit);
+ECSMain.c(89): warning:  #223-D: function "updateECSSystem" declared implicitly
+    updateECSSystem(ECSMain_SoftLimit, ECSMain_HardLimit, ECSMain_CO2Val);
+ECSMain.c(92): warning:  #223-D: function "updateECS" declared implicitly
+      updateECS();
+ECSMain.c(95): warning:  #111-D: statement is unreachable
+    return 0;
+ECSMain.c(106): error:  #159: declaration is incompatible with previous "initECSState" (declared at line 86)
+  void initECSState() {
+ECSMain.c(115): warning:  #223-D: function "updatePrevValues" declared implicitly
+    updatePrevValues(ECSMain_CO2ADCVal);
+ECSMain.c(123): error:  #159: declaration is incompatible with previous "initECSModules" (declared at line 87)
+  void initECSModules() {
+ECSMain.c(124): warning:  #223-D: function "DisableInterrupts" declared implicitly
+    DisableInterrupts();
+ECSMain.c(131): warning:  #223-D: function "EnableInterrupts" declared implicitly
+    EnableInterrupts();
+ECSMain.c(139): error:  #159: declaration is incompatible with previous "updateECS" (declared at line 92)
+  void updateECS() {
+ECSMain.c(151): warning:  #223-D: function "updateECSState" declared implicitly
+      updateECSState(softLimit, hardLimit);
+ECSMain.c(156): warning:  #223-D: function "updateECSSystem" declared implicitly
+      updateECSSystem(softLimit, hardLimit, co2Val);
+ECSMain.c(161): warning:  #223-D: function "updatePrevValues" declared implicitly
+    updatePrevValues(currCO2ADCVal);
+ECSMain.c(171): error:  #159: declaration is incompatible with previous "updatePrevValues" (declared at line 115)
+  void updatePrevValues(int currCO2ADCVal) {
+ECSMain.c(188): error:  #159: declaration is incompatible with previous "updateECSState" (declared at line 88)
+  void updateECSState(int softLimit, int hardLimit) {
+ECSMain.c(207): error:  #159: declaration is incompatible with previous "updateECSSystem" (declared at line 89)
+  void updateECSSystem(int softLimit, int hardLimit, int co2Val) {
+ECSMain.c(208): warning:  #223-D: function "updateElectrolysis" declared implicitly
+    updateElectrolysis();
+ECSMain.c(209): warning:  #223-D: function "updateLED" declared implicitly
+    updateLED();
+ECSMain.c(210): warning:  #223-D: function "updateSound" declared implicitly
+    updateSound();
+ECSMain.c(219): error:  #159: declaration is incompatible with previous "updateElectrolysis" (declared at line 208)
+  void updateElectrolysis() {
+ECSMain.c(232): error:  #159: declaration is incompatible with previous "updateLED" (declared at line 209)
+  void updateLED() {
+ECSMain.c(235): warning:  #223-D: function "DisableInterrupts" declared implicitly
+    DisableInterrupts();
+ECSMain.c(247): warning:  #223-D: function "EnableInterrupts" declared implicitly
+    EnableInterrupts();
+ECSMain.c(255): error:  #159: declaration is incompatible with previous "updateSound" (declared at line 210)
+  void updateSound() {
+ECSMain.c: 17 warnings, 9 errors
+compiling LED.c...
+compiling Electrolysis.c...
+compiling CO2Sensor.c...
+compiling LCD.c...
+compiling ST7735.c...
+".\ECS.axf" - 14 Error(s), 24 Warning(s).
+Target not created

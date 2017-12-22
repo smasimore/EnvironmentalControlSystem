@@ -29,11 +29,3 @@
  Outputs: none
 */
 void Switch_Init(void);
-
-// PRIVATE FUNCTIONS
-
-static void GPIOPortBArm(void);
-static void Timer0Arm(void);
-void GPIOPortB_Handler(void);
-void Timer0A_Handler(void);
-void ButtonPressed(void);

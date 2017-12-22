@@ -42,5 +42,3 @@ void Electrolysis_Off(void);
  Outputs: none
 */
 void Electrolysis_Test(void);
-
-static void testWait(void);

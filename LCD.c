@@ -25,6 +25,11 @@
 #include "LCD.h"
 #include "ECSMain.h"
 
+void drawSoftLimitSection(int16_t color, int softLimit);
+void drawHardLimitSection(int16_t color, int hardLimit);
+void drawCO2LevelSection(int co2Val);
+void drawProducingO2Section(void);
+
 // PRIVATE VARS
 
 const int16_t DefaultColor = ST7735_CYAN;

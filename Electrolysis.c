@@ -15,6 +15,8 @@
 #include "inc/tm4c123gh6pm.h"
 #include "Electrolysis.h"
 
+static void testWait(void);
+
 // PUBLIC FUNCTIONS
 
 /**************Electrolysis_Init***************

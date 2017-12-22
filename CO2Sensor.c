@@ -23,6 +23,7 @@
 #define SENSOR_MAX 999
 #define SENSOR_MIN 0
 
+static void testWait(void);
 
 /**************CO2Sensor_Init***************
  Description: Inits PE5, ADC0, and Timer1A.

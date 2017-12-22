@@ -19,6 +19,12 @@
 #include "Switch.h"
 #include "ECSMain.h"
 
+static void GPIOPortBArm(void);
+static void Timer0Arm(void);
+void GPIOPortB_Handler(void);
+void Timer0A_Handler(void);
+void ButtonPressed(void);
+
 volatile static unsigned long Last;
 
 /**************Switch_Init***************

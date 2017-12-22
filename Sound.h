@@ -46,13 +46,6 @@ void Sound_On(void);
 */
 void Sound_Off(void);
 
-// PRIVATE FUNCTIONS
-
-void SysTick_Handler(void);
-void Timer2_Handler(void);
-void playSound(void);
-void soundOut(uint32_t data);
-
 // TEST FUNCTIONS
 
 /**************Sound_Test***************
@@ -61,5 +54,3 @@ void soundOut(uint32_t data);
  Outputs: none
 */
 void Sound_Test(void);
-
-static void testWait(void);;

@@ -51,5 +51,3 @@ void LED_RedOn(void);
  Outputs: none
 */
 void LED_Test(void);
-
-static void testWait(void);
