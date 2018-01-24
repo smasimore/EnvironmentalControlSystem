@@ -12,7 +12,7 @@
  */
 
 #include <stdint.h>
-#include "inc/tm4c123gh6pm.h"
+#include "tm4c123gh6pm.h"
 #include "Electrolysis.h"
 
 static void testWait(void);

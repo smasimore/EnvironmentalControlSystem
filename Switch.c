@@ -15,7 +15,7 @@
  */
 
 #include <stdint.h>
-#include "inc/tm4c123gh6pm.h"
+#include "tm4c123gh6pm.h"
 #include "Switch.h"
 #include "ECSMain.h"
 
